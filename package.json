@@ -1,0 +1,20 @@
+{
+  "name": "fruitstore",
+  "version": "1.0.0",
+  "description": "Fruit Store + adm",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wagner3UB/fruitStore.git"
+  },
+  "author": "Wagner Trezub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wagner3UB/fruitStore/issues"
+  },
+  "homepage": "https://github.com/Wagner3UB/fruitStore#readme",
+  "type": "module"
+}
