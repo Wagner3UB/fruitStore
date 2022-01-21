@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet">
@@ -19,12 +20,33 @@
   </header>
   <main>
     <article>
-      
+      <section><img src="https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg" alt="3 banane gialle"></section>
+      <section><h2>Nome della Frutta</h2><p>Descrizione, come collore, taglia, peso, etc.</p></section>
+      <section class="col-1"><h4>Prezzo:</h4><p>00,00</p><p>€</p></section>
+      <section class="col-1 add"><button>+</button><p>0</p><button>-</button></section>
+      <section class="col-1 color"><h4>Totale:</h4><p id="totalProduct">00,00</p><p>€</p></section>
+      <section class="col-1 add_to_cart"><button id="add_to_cart"><span class="material-icons-outlined">add_shopping_cart</span></button></section>
     </article>
-
   </main>
+  <article id="cart">
+    <header><h2>Tuo Carello</h2></header>
+    <section id="productCart">
+      
+<!--       <ul>
+        <li><h3>Product</h3></li>
+        <li><h3>Quantity:</h3><button>+</button><p>0</p><button>-</button></li>
+        <li><h3>Total:</h3><p>00,00</p></li>
+      </ul> -->
+      <div>
+        <h3>Total:</h3><p>0.000,00</p><p>€</p>
+        <h3>Discount:</h3><p>20</p><p>%</p>
+        <h3>Final:</h3><p>000,00</p><p>€</p>
+      </div>
+    </section>
+  </article>
   <footer>
-
+    <div><h4>Total:</h4><p></p></div>
+    <button id="checkout">Prossegui<span class="material-icons-outlined">paid</span></button>
   </footer>
   
 </body>
