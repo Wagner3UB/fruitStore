@@ -5,6 +5,7 @@ body{
   padding: 10px 20px;
   font-size: 16px;
   background-color: rgba(252, 252, 228, 0.194);
+  position: relative;
 }
 p{
   display: inline-block;
@@ -86,7 +87,58 @@ main article section:nth-of-type(2){
   padding: 8px 12px;
 }
 #cart{
-  width: 70%;
+  width: 100vw;
+  height: 100vh;
   padding: 20px;
-  background-color: tomato;
+  background-color: rgba(151, 144, 40, 0.616);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartBox{
+  width: 80%;
+  max-height: 80%;
+  padding: 20px;
+  background-color: #ddd;
+}
+.titleBar{
+  display: flex;
+  justify-content: center;
+}
+.titleBar h3{
+  width: calc(100%/3);
+}
+.productCartItem{
+  display: flex;
+  padding: 20px 0;
+}
+.productCartItem li{
+  width: calc(100%/3);
+  display: flex;
+  align-items: center;
+}
+.middleProductCart{
+  text-align: center;
+  justify-content: center;
+}
+.lastProductCart{
+  text-align: end;
+  justify-content: end;
+}
+.productCartItem li:nth-of-type(2) button{
+  width: 30px;
+  padding: 5px 0;
+  background-color: #aaa;
+  border-radius: 4px;
+}
+.productCartItem li:nth-of-type(2) p{
+  padding: 5px 10px;
+}
+.productCartTotal{
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
 }
