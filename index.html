@@ -10,7 +10,7 @@
       rel="stylesheet">
   <title>FruttyFruits MegaStore</title>
 </head>
-<body>
+<body class="home">
   <header>
     <div>
       <h1>FruttyFruits</h1>
@@ -19,15 +19,17 @@
     <button><span class="material-icons-outlined">shopping_cart</span>(<span id="quantitaProdotti">0</span>)</button>
   </header>
   <main>
-    <article>
-      <section><img src="https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg" alt="3 banane gialle"></section>
-      <section><h2>Nome della Frutta</h2><p>Descrizione, come collore, taglia, peso, etc.</p></section>
-      <section class="col-1"><h4>Prezzo:</h4><p>00,00</p><p>€</p></section>
-      <section class="col-1 add"><button>+</button><p>0</p><button>-</button></section>
-      <section class="col-1 color"><h4>Totale:</h4><p id="totalProduct">00,00</p><p>€</p></section>
-      <section class="col-1 add_to_cart"><button id="add_to_cart"><span class="material-icons-outlined">add_shopping_cart</span></button></section>
-    </article>
+    <ul>
+      <li><img src="https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg" alt="3 banane gialle"></li>
+      <li><h2>Nome della Frutta</h2><p>Descrizione, come collore, taglia, peso, etc.</p></li>
+      <li class="col-1"><h4>Prezzo:</h4><p>00,00</p><p>€</p></li>
+      <li class="col-1 add"><button>+</button><p>0</p><button>-</button></li>
+      <li class="col-1 color"><h4>Totale:</h4><p id="totalProduct">00,00</p><p>€</p></li>
+      <li class="col-1 add_to_cart"><button id="add_to_cart"><span class="material-icons-outlined">add_shopping_cart</span></button></li>
+    </ul>
   </main>
+
+  <!-- CARRELLO -->
   <article id="cart">
     <div class="cartBox">
       <header><h2>Tuo Carello</h2></header>      
@@ -40,17 +42,19 @@
           <li class="middleProductCart"><button>+</button><p>0</p><button>-</button></li>
           <li class="lastProductCart"><p>00,00</p></li>
         </ul>
-        <div class="productCartTotal">
-          <h3>Total:</h3><p>0.000,00</p><p>€</p>
-          <h3>Discount:</h3><p>20</p><p>%</p>
-          <h3>Final:</h3><p>000,00</p><p>€</p>
-        </div>
       </section>
+      <ul class="productCartTotal">
+        <li><h3>Total:</h3><p>0.000,00<span>€</span></p></li>
+        <li><h3>Discount:</h3><p>20<span>%</span></p></li>
+        <li><h3>Final:</h3><p>0.000,00<span>€</span></p></li>
+      </ul>
     </div>
   </article>
+  <!-- END CARRELLO -->
+
   <footer>
-    <div><h4>Total:</h4><p></p></div>
-    <button id="checkout">Prossegui<span class="material-icons-outlined">paid</span></button>
+    <div><h4>Total:</h4><p>0.000,00<span>€</span></p></div>
+    <button id="checkout">Aggiungi al carrello<span class="material-icons-outlined">paid</span></button>
   </footer>
   
 </body>

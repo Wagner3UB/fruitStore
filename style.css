@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap');
 
-body{
-  font-size: 18px;
-  padding: 10px 20px;
+body.home{
   font-size: 16px;
+  padding: 10px 20px;
   background-color: rgba(252, 252, 228, 0.194);
   position: relative;
 }
 p{
   display: inline-block;
-}
-img{
-  width: 200px;
-  border: 5px solid;
+  font-family: 'Montserrat', sans-serif;
 }
 h1{
   font-family: 'Lobster', cursive;
@@ -42,18 +38,21 @@ header button{
   align-items: center;
 }
 
-main article{
+main ul{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 30px 0;
 }
-
-main article section:nth-of-type(1){
+main li:nth-of-type(1){
   width: 20%;
 }
-main article section:nth-of-type(2){
+main li:nth-of-type(2){
   width: 40%;
+}
+body.home img{
+  width: 200px;
+  border: 5px solid;
 }
 .col-1{
   width: 10%;
@@ -86,6 +85,8 @@ main article section:nth-of-type(2){
   border-radius: 4px;
   padding: 8px 12px;
 }
+
+/*CARRELLO*/
 #cart{
   width: 100vw;
   height: 100vh;
@@ -94,22 +95,34 @@ main article section:nth-of-type(2){
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
+  display: none; /*Questo deve essere cambiato a flex*/
   justify-content: center;
   align-items: center;
 }
 .cartBox{
   width: 80%;
+  height: 1000px;
   max-height: 80%;
   padding: 20px;
   background-color: #ddd;
 }
+.cartBox h2{
+  font-family: 'Lobster', cursive;
+  color: rgb(160, 15, 15);
+}
 .titleBar{
   display: flex;
   justify-content: center;
+  padding-right: 20px;
 }
 .titleBar h3{
   width: calc(100%/3);
+}
+#productCart{
+  overflow-y: auto;
+  height: 60%;
+  max-height: 60%;
+  padding-right: 20px;
 }
 .productCartItem{
   display: flex;
@@ -138,7 +151,119 @@ main article section:nth-of-type(2){
   padding: 5px 10px;
 }
 .productCartTotal{
+  width: 100%;
+  margin-right: 0;
   display: flex;
-  justify-content: end;
+  flex-flow: column;
+  align-items: flex-end;
+  padding-top: 30px;
+}
+.productCartTotal li{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
+}
+.productCartTotal li:nth-of-type(2){
+  color: rgb(160, 15, 15);
+}
+.productCartTotal li:last-child{
+  border-top: 2px dotted #333;
+}
+
+/*FOOTER*/
+footer{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  padding-right: 40px;
+}
+footer button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-radius: 15px;
+  background-color: rgb(231, 235, 38);
+}
+
+
+/* ADM PANEL */
+body.adm{
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: rgba(252, 252, 228, 0.194);
+  position: relative;
+}
+body.adm{
+  display: flex;
+}
+body.adm main{
+  width: calc(2*100vw/3);
+  height: 100vh;
+  padding: 30px;
+}
+body.adm img{
+  width: 100px;
+  border: 5px solid;
+}
+body.adm aside{
+  width: calc(100vw/3);
+  height: 100vh;
+  background-color: #ddd;
+  padding: 30px;
+}
+body.adm aside h2{
+  margin-bottom: 20px;
+}
+body.adm aside input,
+body.adm aside textarea{
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+body.adm aside input,
+body.adm aside input::placeholder,
+body.adm aside label{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+}
+body.adm .newProductValorSect{
+  display: flex;
+}
+body.adm .newProductValorSect div:nth-of-type(1){
+  margin-right: 5px;
+}
+body.adm .newProductValorSect div:nth-of-type(2){
+margin: 0 5px;
+}
+body.adm .newProductValorSect div:nth-of-type(3){
+margin-left: 5px;
+}
+body.adm aside{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+body.adm aside button{
+  width: 100px;
+  padding: 5px 0;
+  border: 1px solid #333;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.363);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 0.8rem;
+}
+body.adm aside button span{
+  font-size: inherit;
 }
