@@ -1,4 +1,5 @@
 import { listGenerator } from "./listGenerator.js";
+import { addNewItem } from "./addProduct.js";
 
 listGenerator();
 
@@ -22,6 +23,9 @@ const admDisplayOff = () => {
   document.querySelector('#admPanel').style.display = 'none';
 }
 document.querySelector(".closePanel").addEventListener("click", admDisplayOff);
+
+
+document.getElementById("productAdd").addEventListener("click", addNewItem);
 
 
 /* 

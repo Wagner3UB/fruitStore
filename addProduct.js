@@ -2,7 +2,7 @@ import { NewProduct } from "./productGenerator.js";
 import { arrayListFruits } from "./list.js";
 import { newListGenerator } from "./newListGenerator.js";
 
-let addNewItem = () => {
+export let addNewItem = () => {
   let newItem = new NewProduct(
     document.querySelector("#productName").value,
     document.querySelector("#productDescription").value,
@@ -18,12 +18,13 @@ let addNewItem = () => {
     price: newItem.price,
     discount: newItem.discount, 
     quantity: newItem.quantity, 
-    img: newItem.image,
-    imgAlt: newItem.imageAlt
+    image: newItem.image,
+    imageAlt: newItem.imageAlt
   };
   arrayListFruits.push(object);
+  console.log(arrayListFruits);
  
   newListGenerator();
 }
 export let newArrayListFruits = arrayListFruits;
-document.getElementById("productAdd").addEventListener("click", addNewItem);
+
