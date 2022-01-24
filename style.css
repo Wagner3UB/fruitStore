@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap');
 
-body.home{
-  font-size: 16px;
-  padding: 10px 20px;
-  background-color: rgba(252, 252, 228, 0.194);
-  position: relative;
-}
 p{
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
@@ -23,19 +17,29 @@ h2{font-size: 1.44rem;}
 h3{font-size: 1.2rem;}
 h4{font-size: 0.694rem;}
 
+body.home{
+  font-size: 16px;
+  background-color: rgba(252, 252, 228, 0.194);
+  position: relative;
+}
 header{
   display: flex;
   margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: rgba(86, 87, 33, 0.123);
 }
 header div{
   width: 80%;
   display: inline-block;
 }
 header button{
-  width: 19%;
+  width: 100px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+body.home main{
+  padding: 10px 20px;
 }
 
 main ul{
