@@ -1,21 +1,19 @@
 import { listGenerator } from "./listGenerator.js";
 
-listGenerator()
+listGenerator();
+
+//open cart
+const cartDisplayOn = () => {
+  document.querySelector('#cart').style.display = 'flex';
+}
+document.querySelector("#cartDisplay").addEventListener("click", cartDisplayOn);
+//close cart
+const cartDisplayOff = () => {
+  document.querySelector('#cart').style.display = 'none';
+}
+document.querySelector(".cartClose").addEventListener("click", cartDisplayOff);
 
 
-
-
-
-/* 
-product display home
-<ul>
-  <li><img src="https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg" alt="3 banane gialle"></li>
-  <li><h2>Nome della Frutta</h2><p>Descrizione, come collore, taglia, peso, etc.</p></li>
-  <li class="col-1"><h4>Prezzo:</h4><p>00,00</p><p>€</p></li>
-  <li class="col-1 add"><button>+</button><p>0</p><button>-</button></li>
-  <li class="col-1 color"><h4>Totale:</h4><p id="totalProduct">00,00</p><p>€</p></li>
-  <li class="col-1 add_to_cart"><button id="add_to_cart"><span class="material-icons-outlined">add_shopping_cart</span></button></li>
-</ul> */
 
 /* 
 product cart home

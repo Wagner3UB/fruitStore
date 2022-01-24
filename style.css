@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap');
 
-p{
+p,li{
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
 }
@@ -95,20 +95,32 @@ body.home img{
   width: 100vw;
   height: 100vh;
   padding: 20px;
-  background-color: rgba(151, 144, 40, 0.616);
+  background-color: rgba(151, 144, 40, 0.753);
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   display: none; /*Questo deve essere cambiato a flex*/
   justify-content: center;
   align-items: center;
 }
 .cartBox{
+  position: relative;
   width: 80%;
   height: 1000px;
   max-height: 80%;
   padding: 20px;
   background-color: #ddd;
+}
+.cartBox .cartClose{
+  content: "x";
+  width: unset;
+  position: absolute;
+  top: -25px;
+  right: -15px;
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+
 }
 .cartBox h2{
   font-family: 'Lobster', cursive;

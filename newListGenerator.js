@@ -1,6 +1,6 @@
-import { arrayListFruits } from "./list.js";
+import { newArrayListFruits } from "./addProduct.js";
 
-export const listGenerator = () =>{
+export const newListGenerator = () =>{
   let listDisplay = "";
 
   const listCreator = (item, index) => {
@@ -14,7 +14,7 @@ export const listGenerator = () =>{
     + item.quantity +'</p><button onclick="removeQuantity(' 
     + index + ')">-</button></li><li class="col-1 color"><h4>Totale:</h4><p id="totalProduct">'+ (item.price * item.quantity) +'</p><p>€</p></li><li class="col-1 add_to_cart"><button id="add_to_cart"><span class="material-icons-outlined">add_shopping_cart</span></button></li></ul>'
   }
-  arrayListFruits.forEach(listCreator);
+  newArrayListFruits.forEach(listCreator);
 
   document.querySelector("#display").innerHTML = listDisplay;
 }
