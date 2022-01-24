@@ -1,4 +1,4 @@
-import { listGenerator } from "./firstListCreator.js";
+import { listGenerator } from "./listGenerator.js";
 
 listGenerator()
 
