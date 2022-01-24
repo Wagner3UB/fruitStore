@@ -12,7 +12,16 @@ const cartDisplayOff = () => {
   document.querySelector('#cart').style.display = 'none';
 }
 document.querySelector(".cartClose").addEventListener("click", cartDisplayOff);
-
+//open adm panel
+const admDisplayOn = () => {
+  document.querySelector('#admPanel').style.display = 'flex';
+}
+document.querySelector(".openPanel").addEventListener("click", admDisplayOn);
+//close adm panel
+const admDisplayOff = () => {
+  document.querySelector('#admPanel').style.display = 'none';
+}
+document.querySelector(".closePanel").addEventListener("click", admDisplayOff);
 
 
 /* 
