@@ -1,3 +1,11 @@
+import { listGenerator } from "./firstListCreator.js";
+
+listGenerator()
+
+
+
+
+
 /* 
 product display home
 <ul>
