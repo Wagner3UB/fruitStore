@@ -19,11 +19,25 @@ export let addNewItem = () => {
     imageAlt: newItem.imageAlt
   };
 
+
   if(denied == false){
     arrayListFruits.push(object);
     newListGenerator();
+    clearInput();
   }
-  
 }
 export let newArrayListFruits = arrayListFruits;
 
+//cart number home
+/* document.querySelector("#quantitaProdotti").innerHTML = ARRAYITEMSONCART.length; */
+
+//Clear input
+const clearInput = () => {
+  document.querySelector("#productName").value = "";
+  document.querySelector("#productDescription").value = "";
+  document.querySelector("#productPrice").value = "";
+  document.querySelector("#productDiscount").value = "";
+  document.querySelector("#productQuantity").value = "";
+  document.querySelector("#productImage").value = "";
+  document.querySelector("#productImageAlt").value = "";
+};
