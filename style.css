@@ -247,6 +247,7 @@ footer button{
 }
 #admPanel aside h4{
   color: rgb(136, 28, 28);
+  margin-bottom: 5px;
 }
 #admPanel aside input,
 #admPanel aside textarea{
