@@ -1,17 +1,14 @@
 import { NewProduct } from "./productGenerator.js";
 import { arrayListFruits } from "./list.js";
 import { newListGenerator } from "./newListGenerator.js";
+import { validations, denied, checked } from "./validations.js";
 
 export let addNewItem = () => {
-  let newItem = new NewProduct(
-    document.querySelector("#productName").value,
-    document.querySelector("#productDescription").value,
-    document.querySelector("#productPrice").value,
-    document.querySelector("#productDiscount").value,
-    document.querySelector("#productQuantity").value,
-    document.querySelector("#productImage").value,
-    document.querySelector("#productImageAlt").value,
-  );
+
+  validations();
+
+  let newItem = new NewProduct(checked[0],checked[1],checked[2],checked[3],checked[4],checked[5],checked[6]);
+  
   let object = {
     product: newItem.product,
     description: newItem.description,
@@ -21,10 +18,12 @@ export let addNewItem = () => {
     image: newItem.image,
     imageAlt: newItem.imageAlt
   };
-  arrayListFruits.push(object);
-  console.log(arrayListFruits);
- 
-  newListGenerator();
+
+  if(denied == false){
+    arrayListFruits.push(object);
+    newListGenerator();
+  }
+  
 }
 export let newArrayListFruits = arrayListFruits;
 

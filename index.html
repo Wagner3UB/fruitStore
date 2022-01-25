@@ -63,8 +63,10 @@
       <h2>Add New Product</h2>
       <form>
         <label for="productName">Nome prodotto:</label>
+        <h4 class="alertProduct"></h4>
         <input type="text" placeholder="Es: Banana" id="productName" value="">
         <label for="productDescription">Descrizione del prodotto</label>
+        <h4 class="alertDescription"></h4>
         <textarea name="productDescription" id="productDescription" placeholder="Es: Gialla, tonda, piccola etc."></textarea>
         <section class="newProductValorSect">
           <div>
@@ -85,6 +87,7 @@
         <label for="altText">Testo alt per l'immagine</label>
         <input type="text" placeholder="125 characters max" id="productImageAlt">
       </form>
+      
       <div>
         <button id="productAdd">Add<span class="material-icons-outlined">library_add</span></button>
         <button class="closePanel">Close ADM Panel</button>
