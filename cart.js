@@ -36,7 +36,7 @@ export const addToCart = (index) => {
     })
     document.querySelector("#cartNumberDisplay").innerHTML = i;
   }
-  if(arrayCartList.length == 0){
+  if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
     newCartItemCreator();
     cartNumberDisplay();
     listCartGenerator();
