@@ -9,3 +9,12 @@ export class NewProduct{
     this.imageAlt = imageAlt
   }
 } 
+
+export class NewCartProduct {
+  constructor(id, product, quantity, price){
+    this.cartProductId = id;
+    this.cartProductName = product;
+    this.cartProductQuantity = quantity;
+    this.cartProductPrice = price;
+  }
+}

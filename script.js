@@ -1,6 +1,7 @@
-import { arrayListFruits } from "./list.js";
-import { listGenerator } from "./listGenerator.js";
+import { arrayListFruits} from "./list.js";
+import { listGenerator} from "./listGenerator.js";
 import { addNewItem } from "./addProduct.js";
+import { addToCart } from "./cart.js";
 
 
 //open cart
@@ -8,6 +9,8 @@ const cartDisplayOn = () => {
   document.querySelector('#cart').style.display = 'flex';
 }
 document.querySelector("#cartDisplay").addEventListener("click", cartDisplayOn);
+document.querySelector("#checkout").addEventListener("click", cartDisplayOn);
+
 //close cart
 const cartDisplayOff = () => {
   document.querySelector('#cart').style.display = 'none';
@@ -27,9 +30,6 @@ document.querySelector(".closePanel").addEventListener("click", admDisplayOff);
 //add new product
 document.getElementById("productAdd").addEventListener("click", addNewItem);
 
-
-
-
 //addQuantity Display button
 const addQuantity = (index) => {
   arrayListFruits[index].quantity += 1;
@@ -45,8 +45,7 @@ const removeQuantity = (index) => {
     arrayListFruits[index].quantity -= 1;
   listGenerator();
   }
-
 };
 window.removeQuantity = removeQuantity;
-
+window.addToCart = addToCart;
 listGenerator();

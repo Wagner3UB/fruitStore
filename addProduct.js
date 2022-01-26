@@ -27,9 +27,6 @@ export let addNewItem = () => {
   }
 }
 
-//cart number home
-/* document.querySelector("#quantitaProdotti").innerHTML = ARRAYITEMSONCART.length; */
-
 //Clear input
 const clearInput = () => {
   document.querySelector("#productName").value = "";
