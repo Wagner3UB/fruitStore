@@ -12,8 +12,8 @@ export const listGenerator = () =>{
     + item.imageAlt + ' "></li><li><h2>' 
     + item.product + '</h2><p>' 
     + item.description + '</p></li><li class="col-1"><h4>Prezzo:</h4><p>' 
-    + item.price + '</p><p>€</p></li><li class="col-1 add"><button onclick="addQuantity(' 
-    + index + ')">+</button><p>' 
+    + item.price + '</p><p>€</p></li><li class="col-1 add"><button onclick="addQuantity('
+    + index +')">+</button><p>' 
     + item.quantity +'</p><button onclick="removeQuantity(' 
     + index + ')">-</button></li><li class="col-1 color"><h4>Totale:</h4><p id="totalProduct">'
     + (item.price * item.quantity) +'</p><p>€</p></li><li class="col-1 add_to_cart"><button id="add_to_cart"><span class="material-icons-outlined">add_shopping_cart</span></button></li></ul>'
@@ -38,12 +38,9 @@ export const listGenerator = () =>{
     + item.imageAlt + '"></li><li><h2>'
     + item.product + '</h2><p>' 
     + item.description + '</p></li><li class="col-1"><h4>Prezzo:</h4><p>'
-    + item.price + '</p><p>€</p></li><li class="col-1 add"><button onclick="addQuantity(' 
-    + index + ')">+</button><p>'
-    + item.quantity + '</p><button onclick="removeQuantity(' 
-    + index + ')">-</button></li><li class="col-1"><h4>Discount:</h4><p id="discountProduct">'
-    + item.discount + '</p><p>%</p></li><li class="col-1"><button class="material-icons-outlined" onclick="deleteItem(' 
-    + index +')">remove_circle</button></li></ul>'
+    + item.price + '</p><p>€</p></li><li class="col-1 add"><button onclick="addQuantity(' + index + ')">+</button><p>'
+    + item.quantity + '</p><button onclick="removeQuantity(' + index + ')">-</button></li><li class="col-1"><h4>Discount:</h4><p id="discountProduct">'
+    + item.discount + '</p><p>%</p></li><li class="col-1"><button class="material-icons-outlined" onclick="deleteItem(' + index +')">remove_circle</button></li></ul>'
   }
   arrayListFruits.forEach(listAdmCreator);
 

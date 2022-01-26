@@ -1,6 +1,6 @@
 import { NewProduct } from "./productGenerator.js";
 import { arrayListFruits } from "./list.js";
-import { newListGenerator } from "./newListGenerator.js";
+import { listGenerator } from "./listGenerator.js";
 import { validations, denied, checked } from "./validations.js";
 
 export let addNewItem = () => {
@@ -22,11 +22,10 @@ export let addNewItem = () => {
 
   if(denied == false){
     arrayListFruits.push(object);
-    newListGenerator();
+    listGenerator();
     clearInput();
   }
 }
-export let newArrayListFruits = arrayListFruits;
 
 //cart number home
 /* document.querySelector("#quantitaProdotti").innerHTML = ARRAYITEMSONCART.length; */
