@@ -1,7 +1,7 @@
 import { arrayListFruits} from "./list.js";
-import { listGenerator} from "./listGenerator.js";
+import { listGenerator, listCartGenerator} from "./listGenerator.js";
 import { addNewItem } from "./addProduct.js";
-import { addToCart } from "./cart.js";
+import { addToCart, addItemToCart } from "./cart.js";
 
 
 //open cart
@@ -44,6 +44,7 @@ const addQuantity = (index) => {
   if(arrayListFruits[index].quantity > arrayListFruits[index].itemToCart){
     arrayListFruits[index].itemToCart += 1;
     listGenerator();
+    listCartGenerator();
   } else {
     document.querySelector("#modalProduct").style.display = "flex";
     document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non è possibile aggiungere più prodotti";
@@ -59,8 +60,11 @@ const removeQuantity = (index) => {
   }else{
     arrayListFruits[index].itemToCart -= 1;
   listGenerator();
+  listCartGenerator();
   }
 };
 window.removeQuantity = removeQuantity;
 window.addToCart = addToCart;
+window.addItemToCart = addItemToCart;
+
 listGenerator();

@@ -13,11 +13,15 @@ export class NewProduct{
 
 export class NewCartProduct {
   constructor(id, product, quantity, price, discount, itemToCart){
-    this.cartProductId = id;
-    this.cartProductName = product;
-    this.cartProductQuantity = quantity;
-    this.cartProductPrice = price;
-    this.cartProductDiscount = discount;
-    this.cartItemToCart = itemToCart
+    this.id = id;
+    this.product = product;
+    this.quantity = quantity;
+    this.price = price;
+    this.discount = discount;
+    this.itemToCart = itemToCart
+  }
+
+  getTotal = () => {
+    return (this.price * this.itemToCart)*((100-this.discount)/100);
   }
 }
