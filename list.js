@@ -6,7 +6,8 @@ export let arrayListFruits = [
     discount: 20, 
     quantity: 1, 
     image: "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg",
-    imageAlt: "Un mazzo di banane gialle"
+    imageAlt: "Un mazzo di banane gialle",
+    itemToCart: 1
   }
 ];
 export let arrayCartList = [];

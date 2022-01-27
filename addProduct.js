@@ -16,7 +16,8 @@ export let addNewItem = () => {
     discount: newItem.discount, 
     quantity: newItem.quantity, 
     image: newItem.image,
-    imageAlt: newItem.imageAlt
+    imageAlt: newItem.imageAlt,
+    itemToCart: newItem.itemToCart
   };
 
 

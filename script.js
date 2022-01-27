@@ -32,17 +32,23 @@ document.getElementById("productAdd").addEventListener("click", addNewItem);
 
 //addQuantity Display button
 const addQuantity = (index) => {
-  arrayListFruits[index].quantity += 1;
-  listGenerator();
+
+  if(arrayListFruits[index].quantity > arrayListFruits[index].itemToCart){
+    arrayListFruits[index].itemToCart += 1;
+    listGenerator();
+  } else {
+    alert("non puoi aggiungere più prodotti");
+  }
+
 };
 window.addQuantity = addQuantity;
 
 //removeQuantity Display button
 const removeQuantity = (index) => {
-  if(arrayListFruits[index].quantity <= 1){
+  if(arrayListFruits[index].itemToCart <= 1){
     return
   }else{
-    arrayListFruits[index].quantity -= 1;
+    arrayListFruits[index].itemToCart -= 1;
   listGenerator();
   }
 };
