@@ -207,6 +207,9 @@ footer button{
   border-radius: 15px;
   background-color: rgb(231, 235, 38);
 }
+footer button:hover{
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
 
 /* ADM PANEL */
 #admPanel{
@@ -287,10 +290,54 @@ margin-left: 5px;
   color: #666;
   font-size: 0.8rem;
 }
+#admPanel aside button:hover{
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
+
 #admPanel aside button span{
   font-size: inherit;
 }
 #admPanel .closePanel{
   position: absolute;
   bottom: 30px;
+}
+/*MODAL ALERTPRODUCT*/
+#modalProduct {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.747);
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#modalProduct div{
+  width: 700px;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dddddd;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
+#modalProductText{
+  font-weight: 400;
+}
+#modalProduct button{
+  width: 150px;
+  border-radius: 5px;
+  background-color: rgb(231, 235, 38);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modalProduct button:hover{
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
 }

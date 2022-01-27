@@ -40,15 +40,12 @@ export const addToCart = (index) => {
     })
     document.querySelector("#cartNumberDisplay").innerHTML = i;
   }
-  if(arrayCart.quantity >= arrayCart.itemToCart){
+  if (arrayCart.quantity == 0) {
+    document.querySelector("#modalProduct").style.display = "flex";
+    document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
+  } else if(arrayCart.quantity >= arrayCart.itemToCart){
     arrayCart.quantity -= arrayCart.itemToCart;
-    if(arrayCart.quantity === 0){
-      console.log(arrayListFruits);
-      arrayListFruits.splice(index, index + 1);
-      console.log(arrayListFruits);
-      listGenerator();
-    }
-    listCartGenerator();
+    console.log(arrayCart);
     
     if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayCart.product) === -1){
     
@@ -58,12 +55,16 @@ export const addToCart = (index) => {
     cartNumberDisplay();
     listCartGenerator();
     total();
-  } else if (arrayCartList[index].id == index){
+  }  else if (arrayCartList[index].id == index){
     let repeatedCartItem = new NewCartProduct(index, arrayCart.product, arrayCart.quantity, arrayCart.price, arrayCart.discount, arrayCart.itemToCart);
 
     arrayCartList[index].itemToCart += repeatedCartItem.cartItemToCart;
     cartNumberDisplay();
     listCartGenerator();
     total();
+  } else if (arrayCart.quantity == 0) {
+    console.log(arrayCart.quantity)
+    console.log(arrayCart.itemToCart)
+    alert("novo");
   }}
 };

@@ -16,16 +16,24 @@ const cartDisplayOff = () => {
   document.querySelector('#cart').style.display = 'none';
 }
 document.querySelector(".cartClose").addEventListener("click", cartDisplayOff);
+
 //open adm panel
 const admDisplayOn = () => {
   document.querySelector('#admPanel').style.display = 'flex';
 }
 document.querySelector(".openPanel").addEventListener("click", admDisplayOn);
+
 //close adm panel
 const admDisplayOff = () => {
   document.querySelector('#admPanel').style.display = 'none';
 }
 document.querySelector(".closePanel").addEventListener("click", admDisplayOff);
+
+//close modalProductAlert
+const modalProductOff = () => {
+  document.querySelector('#modalProduct').style.display = 'none';
+}
+document.querySelector("#modalProductClose").addEventListener("click", modalProductOff);
 
 //add new product
 document.getElementById("productAdd").addEventListener("click", addNewItem);
@@ -37,7 +45,8 @@ const addQuantity = (index) => {
     arrayListFruits[index].itemToCart += 1;
     listGenerator();
   } else {
-    alert("non puoi aggiungere più prodotti");
+    document.querySelector("#modalProduct").style.display = "flex";
+    document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non è possibile aggiungere più prodotti";
   }
 
 };
