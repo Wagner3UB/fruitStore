@@ -102,7 +102,7 @@ export const validations = () => {
       alertImage = "Campo IMMAGINE vuoto, riprova";
     } else if (imageInput.substring(0,8) !== "https://" && imageInput.substring(0,7) !== "http://") {
       alertImage = "Il campo IMMAGINE deve contenere il link dell'immagine del prodotto e deve iniziare con http:// o https://";
-    } else if (imageInput.slice(-4) !== ".jpg" && imageInput.slice(-5) !== ".jpeg" && imageInput.slice(-4) !== ".png"){
+    } else if (!imageInput.endsWith(".jpg") && !imageInput.endsWith(".jpeg") && !imageInput.endsWith(".png")){
       alertImage = "Il file deve essere .jpg, .jpeg oppure .png";
     } else{
       checked.push(imageInput)

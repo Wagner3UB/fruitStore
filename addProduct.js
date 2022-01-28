@@ -1,4 +1,4 @@
-import { NewProduct } from "./productGenerator.js";
+import { Product } from "./Product.js";
 import { arrayListFruits } from "./list.js";
 import { listGenerator } from "./listGenerator.js";
 import { validations, denied, checked } from "./validations.js";
@@ -7,7 +7,7 @@ export let addNewItem = () => {
 
   validations();
 
-  let object  = new NewProduct(checked[0],checked[1],checked[2],checked[3],checked[4],checked[5],checked[6]);
+  let object  = new Product(checked[0],checked[1],checked[2],checked[3],checked[4],checked[5],checked[6]);
 
   if(denied == false){
     arrayListFruits.push(object);

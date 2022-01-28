@@ -1,4 +1,4 @@
-import { NewCartProduct } from "./productGenerator.js";
+import { CartProduct } from "./CartProduct.js";
 import { listCartGenerator } from "./listGenerator.js";
 import { arrayCartList, arrayListFruits } from "./list.js";
 
@@ -13,7 +13,7 @@ const total = () => {
 
 //cart product constructor
 const newCartItemCreator = (index) => {
-  let object  = new NewCartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
+  let object  = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
 
   arrayCartList.push(object);
 };
@@ -41,7 +41,7 @@ export const addToCart = (index) => {
     listCartGenerator();
     total();
   } else if (arrayCartList[index].id == index){
-    let repeatedCartItem = new NewCartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
+    let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
 
     arrayCartList[index].itemToCart += repeatedCartItem.cartItemToCart;
     cartNumberDisplay(index);
@@ -64,7 +64,7 @@ export const addItemToCart = (index) => {
     listCartGenerator();
     total();
   } else if (arrayCartList[index].id == index){
-    let repeatedCartItem = new NewCartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
+    let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
     console.log(arrayCartList[index].itemToCart, repeatedCartItem.cartItemToCart)
     console.log(arrayCartList, repeatedCartItem)
 
