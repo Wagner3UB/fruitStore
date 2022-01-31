@@ -1,6 +1,6 @@
 import { arrayCartList, arrayListFruits} from "./list.js";
 import { addNewItem } from "./addProduct.js";
-import { addToCart, addItemToCart } from "./cart.js";
+import { addProductToCart, addQuantityCart } from "./cart.js";
 import { Product } from "./Product.js";
 /* import { listGenerator } from "./firstDisplayGenertor.js"; */
 
@@ -41,8 +41,8 @@ document.getElementById("productAdd").addEventListener("click", addNewItem);
 
 let i;
 
-//addQuantity Display button
-const addQuantity = (index) => {
+//addQuantityHome Display button
+const addQuantityHome = (index) => {
   i = index;
 
   if(arrayListFruits[index].quantity > arrayListFruits[index].itemToCart){
@@ -54,10 +54,10 @@ const addQuantity = (index) => {
   }
 
 };
-window.addQuantity = addQuantity;
+
 
 //removeQuantity Display button
-const removeQuantity = (index) => {
+const removeQuantityHome = (index) => {
   if(arrayListFruits[index].itemToCart <= 1){
     return
   }else{
@@ -66,9 +66,10 @@ const removeQuantity = (index) => {
   arrayCartList();
   }
 };
-window.removeQuantity = removeQuantity;
-window.addToCart = addToCart;
-window.addItemToCart = addItemToCart;
+window.addQuantityHome = addQuantityHome;
+window.removeQuantityHome = removeQuantityHome;
+window.addProductToCart = addProductToCart;
+window.addQuantityCart = addQuantityCart;
 
 const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);
 arrayListFruits.push(startObject);

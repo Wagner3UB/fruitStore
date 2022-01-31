@@ -19,8 +19,8 @@ export class CartProduct {
   
     const listCartCreator = (item, index) => {
       listDisplayCart += '<ul class="productCartItem"><li>' 
-      + this.product +'</li><li class="middleProductCart"><button class="addItemToCart" onclick="addItemToCart(' + index + ')">+</button><p>'
-      + this.itemToCart + '</p><button onclick="removeQuantity(' 
+      + this.product +'</li><li class="middleProductCart"><button class="addQuantityCart" onclick="addQuantityCart(' + index + ')">+</button><p>'
+      + this.itemToCart + '</p><button onclick="removeQuantityCart(' 
       + this.index + ')">-</button></li><li class="middleProductCart cartProductDiscount">'
       + this.discount +'<p>%</p></li><li class="lastProductCart"><p>' 
       + this.getTotal().toFixed(2) + '</p><p>€</p></li></ul>'

@@ -26,8 +26,8 @@ const cartNumberDisplay = () => {
   document.querySelector("#cartNumberDisplay").innerHTML = i;
 }
 
-//addToCart Display button
-export const addToCart = (index) => {
+//addProductToCart Display button
+export const addProductToCart = (index) => {
   console.log(index);
   console.log(arrayListFruits[index].quantity);
   console.log(arrayListFruits[index].itemToCart)
@@ -56,8 +56,8 @@ export const addToCart = (index) => {
   }}
 };
 
-//addToCart Display button
-export const addItemToCart = (index) => {
+//addQuantityCart Display button
+export const addQuantityCart = (index) => {
   if (arrayListFruits[index].quantity == 0) {
     document.querySelector("#modalProduct").style.display = "flex";
     document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
