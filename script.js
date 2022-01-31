@@ -1,7 +1,8 @@
-import { arrayListFruits} from "./list.js";
-import { listGenerator, listCartGenerator} from "./listGenerator.js";
+import { arrayCartList, arrayListFruits} from "./list.js";
 import { addNewItem } from "./addProduct.js";
 import { addToCart, addItemToCart } from "./cart.js";
+import { Product } from "./Product.js";
+/* import { listGenerator } from "./firstDisplayGenertor.js"; */
 
 
 //open cart
@@ -38,13 +39,15 @@ document.querySelector("#modalProductClose").addEventListener("click", modalProd
 //add new product
 document.getElementById("productAdd").addEventListener("click", addNewItem);
 
+let i;
+
 //addQuantity Display button
 const addQuantity = (index) => {
+  i = index;
 
   if(arrayListFruits[index].quantity > arrayListFruits[index].itemToCart){
     arrayListFruits[index].itemToCart += 1;
-    listGenerator();
-    listCartGenerator();
+    arrayListFruits[index].getListHome();
   } else {
     document.querySelector("#modalProduct").style.display = "flex";
     document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non è possibile aggiungere più prodotti";
@@ -59,12 +62,15 @@ const removeQuantity = (index) => {
     return
   }else{
     arrayListFruits[index].itemToCart -= 1;
-  listGenerator();
-  listCartGenerator();
+    arrayListFruits[index].getListHome();
+  arrayCartList();
   }
 };
 window.removeQuantity = removeQuantity;
 window.addToCart = addToCart;
 window.addItemToCart = addItemToCart;
 
-listGenerator();
+const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);
+arrayListFruits.push(startObject);
+startObject.getListHome();
+startObject.getListAdm();

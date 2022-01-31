@@ -1,6 +1,5 @@
 import { Product } from "./Product.js";
 import { arrayListFruits } from "./list.js";
-import { listGenerator } from "./listGenerator.js";
 import { validations, denied, checked } from "./validations.js";
 
 export let addNewItem = () => {
@@ -11,7 +10,8 @@ export let addNewItem = () => {
 
   if(denied == false){
     arrayListFruits.push(object);
-    listGenerator();
+    object.getListHome();
+    object.getListAdm();
     clearInput();
   }
 }

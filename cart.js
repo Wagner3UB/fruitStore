@@ -1,5 +1,4 @@
 import { CartProduct } from "./CartProduct.js";
-import { listCartGenerator } from "./listGenerator.js";
 import { arrayCartList, arrayListFruits } from "./list.js";
 
 //Total
@@ -12,14 +11,14 @@ const total = () => {
 }
 
 //cart product constructor
-const newCartItemCreator = (index) => {
+const cartProductCreator = (index) => {
   let object  = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
 
   arrayCartList.push(object);
 };
 
 //Display cart number
-const cartNumberDisplay = (index) => {
+const cartNumberDisplay = () => {
   let i = 0;
   arrayCartList.forEach( function (item){
     i += item.itemToCart;
@@ -29,23 +28,30 @@ const cartNumberDisplay = (index) => {
 
 //addToCart Display button
 export const addToCart = (index) => {
+  console.log(index);
+  console.log(arrayListFruits[index].quantity);
+  console.log(arrayListFruits[index].itemToCart)
   if (arrayListFruits[index].quantity == 0) {
     document.querySelector("#modalProduct").style.display = "flex";
     document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
   } else if(arrayListFruits[index].quantity >= arrayListFruits[index].itemToCart){
     arrayListFruits[index].quantity -= arrayListFruits[index].itemToCart;
+    console.log(arrayListFruits[index]);
  
+
+    
     if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
-    newCartItemCreator(index);
-    cartNumberDisplay(index);
-    listCartGenerator();
-    total();
+      cartProductCreator(index);
+      cartNumberDisplay(index);
+      arrayCartList[index].getDisplayItem();
+      total();
+      console.log(!!arrayCartList[index].id == index);
   } else if (arrayCartList[index].id == index){
     let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
 
     arrayCartList[index].itemToCart += repeatedCartItem.cartItemToCart;
     cartNumberDisplay(index);
-    listCartGenerator();
+    arrayCartList[index].getDisplayItem();
     total();
   }}
 };
@@ -59,9 +65,9 @@ export const addItemToCart = (index) => {
     arrayListFruits[index].quantity -= 1;
  
     if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
-    newCartItemCreator(index);
+    cartProductCreator(index);
     cartNumberDisplay(index);
-    listCartGenerator();
+    arrayCartList[index].getDisplayItem();
     total();
   } else if (arrayCartList[index].id == index){
     let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
@@ -70,7 +76,7 @@ export const addItemToCart = (index) => {
 
     arrayCartList[index].itemToCart += 1;
     cartNumberDisplay(index);
-    listCartGenerator();
+    arrayCartList[index].getDisplayItem();
     total();
   }}
 };
