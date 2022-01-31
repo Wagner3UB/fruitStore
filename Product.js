@@ -12,6 +12,7 @@ export class Product{
     this.itemToCart = 1
   }
   
+//Creazione lista vetrina
   getListHome = () =>{
     let listDisplay = "";
     const getListCreator = (item, index) => {
@@ -28,7 +29,8 @@ export class Product{
     document.querySelector("#display").innerHTML = listDisplay;
   }
 
-  
+
+//Creazione lista pannello Adm
 getListAdm = () => {
   let listDisplayAdm = "";
   const listAdmCreator = (item, index) => {

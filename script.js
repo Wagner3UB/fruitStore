@@ -2,7 +2,6 @@ import { arrayCartList, arrayListFruits} from "./list.js";
 import { addNewItem } from "./addProduct.js";
 import { addProductToCart, addQuantityCart } from "./cart.js";
 import { Product } from "./Product.js";
-/* import { listGenerator } from "./firstDisplayGenertor.js"; */
 
 
 //open cart
@@ -39,12 +38,12 @@ document.querySelector("#modalProductClose").addEventListener("click", modalProd
 //add new product
 document.getElementById("productAdd").addEventListener("click", addNewItem);
 
-let i;
-
-//addQuantityHome Display button
+//addQuantityHome button
+//aggiunge 1 item alla quantità che sarà inviata al carrello
 const addQuantityHome = (index) => {
-  i = index;
+  let i = index;
 
+//validazione quantità item disponibile
   if(arrayListFruits[index].quantity > arrayListFruits[index].itemToCart){
     arrayListFruits[index].itemToCart += 1;
     arrayListFruits[index].getListHome();
@@ -52,25 +51,29 @@ const addQuantityHome = (index) => {
     document.querySelector("#modalProduct").style.display = "flex";
     document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non è possibile aggiungere più prodotti";
   }
-
 };
 
-
-//removeQuantity Display button
+//removeQuantity button
+//toglie 1 item alla quantità che sarà inviata al carrello
 const removeQuantityHome = (index) => {
+
+//il valore non può essere 0 neanche negativo
   if(arrayListFruits[index].itemToCart <= 1){
     return
-  }else{
+  } else {
     arrayListFruits[index].itemToCart -= 1;
     arrayListFruits[index].getListHome();
-  arrayCartList();
   }
 };
+
+//Insersione onclick="" allo scopo del JS
+//Sono pulsanti della pagina con l'evento onclick 
 window.addQuantityHome = addQuantityHome;
 window.removeQuantityHome = removeQuantityHome;
 window.addProductToCart = addProductToCart;
 window.addQuantityCart = addQuantityCart;
 
+//Creazione 1° item della pagina e generazione della vetrina e panello adm
 const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);
 arrayListFruits.push(startObject);
 startObject.getListHome();

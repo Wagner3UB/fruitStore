@@ -1,58 +1,36 @@
 import { CartProduct } from "./CartProduct.js";
 import { arrayCartList, arrayListFruits } from "./list.js";
 
-//Total
-const total = () => {
-  let total = 0;
-  arrayCartList.forEach(function (item){
-    total += item.getTotal();
-  });
-  document.querySelector("#total").innerHTML = total.toFixed(2);
-}
-
 //cart product constructor
 const cartProductCreator = (index) => {
-  let object  = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
-
-  arrayCartList.push(object);
+  console.log(index)
+  let cartItem  = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
+  console.log(cartItem)
+  arrayCartList.push(cartItem);
+  console.log(arrayCartList[index].id)
 };
 
-//Display cart number
-const cartNumberDisplay = () => {
-  let i = 0;
-  arrayCartList.forEach( function (item){
-    i += item.itemToCart;
-  })
-  document.querySelector("#cartNumberDisplay").innerHTML = i;
-}
-
 //addProductToCart Display button
-export const addProductToCart = (index) => {
-  console.log(index);
-  console.log(arrayListFruits[index].quantity);
-  console.log(arrayListFruits[index].itemToCart)
+export const addProductToCart = (index) => {    
+/*   console.log(arrayListFruits[index].quantity);
+  console.log(arrayListFruits[index].itemToCart); */
   if (arrayListFruits[index].quantity == 0) {
     document.querySelector("#modalProduct").style.display = "flex";
     document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
   } else if(arrayListFruits[index].quantity >= arrayListFruits[index].itemToCart){
     arrayListFruits[index].quantity -= arrayListFruits[index].itemToCart;
-    console.log(arrayListFruits[index]);
- 
 
-    
     if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
       cartProductCreator(index);
-      cartNumberDisplay(index);
+      arrayCartList[index].cartNumberDisplay();
       arrayCartList[index].getDisplayItem();
-      total();
-      console.log(!!arrayCartList[index].id == index);
-  } else if (arrayCartList[index].id == index){
+      arrayCartList[index].getTotalCartValue();
+  } else if (arrayCartList[index].id === index){
     let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
-
-    arrayCartList[index].itemToCart += repeatedCartItem.cartItemToCart;
-    cartNumberDisplay(index);
+    arrayCartList[index].itemToCart += repeatedCartItem.itemToCart;
+    arrayCartList[index].cartNumberDisplay(index);
     arrayCartList[index].getDisplayItem();
-    total();
+    arrayCartList[index].getTotalCartValue();
   }}
 };
 
@@ -66,17 +44,15 @@ export const addQuantityCart = (index) => {
  
     if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
     cartProductCreator(index);
-    cartNumberDisplay(index);
+    arrayCartList[index].cartNumberDisplay(index);
     arrayCartList[index].getDisplayItem();
-    total();
+    arrayCartList[index].getTotalCartValue();
+
   } else if (arrayCartList[index].id == index){
     let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
-    console.log(arrayCartList[index].itemToCart, repeatedCartItem.cartItemToCart)
-    console.log(arrayCartList, repeatedCartItem)
-
     arrayCartList[index].itemToCart += 1;
-    cartNumberDisplay(index);
+    arrayCartList[index].cartNumberDisplay(index);
     arrayCartList[index].getDisplayItem();
-    total();
+    arrayCartList[index].getTotalCartValue();
   }}
 };
