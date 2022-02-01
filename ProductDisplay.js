@@ -22,7 +22,7 @@ export class ProductDisplay {
       arrayListFruits.push(object);
       object.getListHome();
       object.getListAdm();
-      clearInput();
+      this.clearInput;
     };
   };
 
@@ -40,7 +40,6 @@ export class ProductDisplay {
   //addQuantityHome button
   //aggiunge 1 item alla quantità che sarà inviata al carrello
   addQuantityHome = (index) => {
-    let i = index;
 
     //validazione quantità item disponibile
     if (arrayListFruits[index].quantity > arrayListFruits[index].itemToCart) {
