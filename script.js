@@ -1,8 +1,10 @@
-import { arrayListFruits} from "./list.js";
-import { addNewItem } from "./addProduct.js";
-import { Product } from "./Product.js";
+import { ProductDisplay } from "./ProductDisplay.js";
 import { CartDisplay } from "./CartDisplay.js";
 
+const productDisplay = new ProductDisplay();
+const cartDisplay = new CartDisplay();
+
+productDisplay.startProduct();
 
 //open cart
 const cartDisplayOn = () => {
@@ -36,37 +38,14 @@ const modalProductOff = () => {
 document.querySelector("#modalProductClose").addEventListener("click", modalProductOff);
 
 //add new product
-document.getElementById("productAdd").addEventListener("click", addNewItem);
+document.getElementById("productAdd").addEventListener("click", function(){productDisplay.addNewItem;});
 
-//addQuantityHome button
-//aggiunge 1 item alla quantità che sarà inviata al carrello
-const addQuantityHome = (index) => {
-  let i = index;
-
-//validazione quantità item disponibile
-  if(arrayListFruits[index].quantity > arrayListFruits[index].itemToCart){
-    arrayListFruits[index].itemToCart += 1;
-    arrayListFruits[index].getListHome();
-  } else {
-    document.querySelector("#modalProduct").style.display = "flex";
-    document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non è possibile aggiungere più prodotti";
-  }
-};
-
-//removeQuantity button
-//toglie 1 item alla quantità che sarà inviata al carrello
-const removeQuantityHome = (index) => {
-
-//il valore non può essere 0 neanche negativo
-  if(arrayListFruits[index].itemToCart <= 1){
-    return
-  } else {
-    arrayListFruits[index].itemToCart -= 1;
-    arrayListFruits[index].getListHome();
-  }
-};
-
-const cartDisplay = new CartDisplay();
+const addHome = (index) => {
+  productDisplay.addQuantityHome(index);
+}
+const removeHome = (index) => {
+  productDisplay.removeQuantityHome(index);
+}
 const toCart = (index) => {
   cartDisplay.addProductToCart(index);
 }
@@ -76,16 +55,7 @@ const addCart = (index) => {
 
 //Insersione onclick="" allo scopo del JS
 //Sono pulsanti della pagina con l'evento onclick 
-window.addQuantityHome = addQuantityHome;
-window.removeQuantityHome = removeQuantityHome;
+window.addHome = addHome;
+window.removeHome = removeHome;
 window.toCart = toCart;
 window.addCart = addCart;
-
-
-
-
-//Creazione 1° item della pagina e generazione della vetrina e panello adm
-const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);
-arrayListFruits.push(startObject);
-startObject.getListHome();
-startObject.getListAdm();

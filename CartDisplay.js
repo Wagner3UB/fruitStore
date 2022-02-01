@@ -1,5 +1,7 @@
 import { CartProduct } from "./CartProduct.js";
-import { arrayCartList, arrayListFruits } from "./list.js";
+import { arrayListFruits} from "./ProductDisplay.js";
+
+export let arrayCartList = [];
 
 export class CartDisplay{
 

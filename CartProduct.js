@@ -1,4 +1,4 @@
-import { arrayCartList } from "./list.js";
+import { arrayCartList } from "./CartDisplay.js";
 
 export class CartProduct {
   constructor(id, product, quantity, price, discount, itemToCart){
