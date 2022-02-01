@@ -10,29 +10,7 @@ const cartProductCreator = (index) => {
   console.log(arrayCartList[index].id)
 };
 
-//addProductToCart Display button
-export const addProductToCart = (index) => {    
-/*   console.log(arrayListFruits[index].quantity);
-  console.log(arrayListFruits[index].itemToCart); */
-  if (arrayListFruits[index].quantity == 0) {
-    document.querySelector("#modalProduct").style.display = "flex";
-    document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
-  } else if(arrayListFruits[index].quantity >= arrayListFruits[index].itemToCart){
-    arrayListFruits[index].quantity -= arrayListFruits[index].itemToCart;
 
-    if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
-      cartProductCreator(index);
-      arrayCartList[index].cartNumberDisplay();
-      arrayCartList[index].getDisplayItem();
-      arrayCartList[index].getTotalCartValue();
-  } else if (arrayCartList[index].id === index){
-    let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
-    arrayCartList[index].itemToCart += repeatedCartItem.itemToCart;
-    arrayCartList[index].cartNumberDisplay(index);
-    arrayCartList[index].getDisplayItem();
-    arrayCartList[index].getTotalCartValue();
-  }}
-};
 
 //addQuantityCart Display button
 export const addQuantityCart = (index) => {

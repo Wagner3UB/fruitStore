@@ -23,7 +23,7 @@ export class Product{
       + item.description + '</p></li><li class="col-1"><h4>Prezzo:</h4><p>' 
       + item.price.toFixed(2) + '</p><p>€</p></li><li class="col-1 add"><button onclick="addQuantityHome('+ index +')">+</button><p class="quantityDisplayProduct">'
       + item.itemToCart  + '</p><button onclick="removeQuantityHome(' + index + ')">-</button></li><li class="col-1 color"><h4>Totale:</h4><p id="totalProduct">'
-      + (item.price * item.itemToCart).toFixed(2) +'</p><p>€</p></li><li class="col-1 add_to_cart"><button id="add_to_cart" onclick="addProductToCart('+ index +')"><span class="material-icons-outlined">add_shopping_cart</span></button></li></ul>'
+      + (item.price * item.itemToCart).toFixed(2) +'</p><p>€</p></li><li class="col-1 add_to_cart"><button id="add_to_cart" onclick="toCart('+ index +')"><span class="material-icons-outlined">add_shopping_cart</span></button></li></ul>'
     }
     arrayListFruits.forEach(getListCreator);
     document.querySelector("#display").innerHTML = listDisplay;

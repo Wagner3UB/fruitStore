@@ -1,7 +1,8 @@
-import { arrayCartList, arrayListFruits} from "./list.js";
+import { arrayListFruits} from "./list.js";
 import { addNewItem } from "./addProduct.js";
-import { addProductToCart, addQuantityCart } from "./cart.js";
+import { addQuantityCart } from "./cartOld.js";
 import { Product } from "./Product.js";
+import { CartDisplay } from "./CartDisplay.js";
 
 
 //open cart
@@ -70,8 +71,12 @@ const removeQuantityHome = (index) => {
 //Sono pulsanti della pagina con l'evento onclick 
 window.addQuantityHome = addQuantityHome;
 window.removeQuantityHome = removeQuantityHome;
-window.addProductToCart = addProductToCart;
+window.toCart = toCart;
 window.addQuantityCart = addQuantityCart;
+function toCart(index){
+  let cartDisplay = new CartDisplay();
+  cartDisplay.addProductToCart(index);
+}
 
 //Creazione 1° item della pagina e generazione della vetrina e panello adm
 const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);

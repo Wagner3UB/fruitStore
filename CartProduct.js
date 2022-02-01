@@ -19,32 +19,22 @@ export class CartProduct {
       + this.itemToCart + '</p><button onclick="removeQuantityCart(' 
       + this.index + ')">-</button></li><li class="middleProductCart cartProductDiscount">'
       + this.discount +'<p>%</p></li><li class="lastProductCart"><p>' 
-      + this.getTotalProduct().toFixed(2) + '</p><p>€</p></li></ul>'
+      + this.getTotalProduct.toFixed(2) + '</p><p>€</p></li></ul>'
     }
     arrayCartList.forEach(listCartCreator);
   
     document.querySelector("#productCart").innerHTML = listDisplayCart;
-  };
-
-  //Display cart number
-  cartNumberDisplay = () => {
-    let i = 0;
-    arrayCartList.forEach((item) =>{
-      i += item.itemToCart;
-    });
-    document.querySelector("#cartNumberDisplay").innerHTML = i;
-  };
-
-
-  getTotalProduct = () => {
+  };  
+  
+  get getTotalProduct() {
     return (this.price * this.itemToCart)*((100-this.discount)/100);
-  }
+  };
 
-  //Total
+  //Total Value Cart
   getTotalCartValue = () => {
     let totalCartValue = 0;
     arrayCartList.forEach(function (item){
-      totalCartValue += item.getTotalProduct();
+      totalCartValue += item.getTotalProduct;
     });
     document.querySelector("#total").innerHTML = totalCartValue.toFixed(2);
   };
