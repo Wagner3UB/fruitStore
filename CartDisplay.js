@@ -24,14 +24,36 @@ export class CartDisplay{
         arrayCartList[index].getDisplayItem();
     } else if (arrayCartList[index].id === index){
       let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
+
       arrayCartList[index].itemToCart += repeatedCartItem.itemToCart;
       this.cartNumberDisplay;
       this.getTotalCartValue;
       arrayCartList[index].getDisplayItem();
-    }
-  }
-};
+    }    }
+  };
 
+  //addQuantityCart Display button
+  addQuantityCart = (index) => {
+  if (arrayListFruits[index].quantity == 0) {
+    document.querySelector("#modalProduct").style.display = "flex";
+    document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
+  } else if(arrayListFruits[index].quantity >= arrayListFruits[index].itemToCart){
+    arrayListFruits[index].quantity -= 1;
+ 
+    if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
+    cartProductCreator(index);
+    this.cartNumberDisplay(index);
+    arrayCartList[index].getDisplayItem();
+    arrayCartList[index].getTotalCartValue();
+
+  } else if (arrayCartList[index].id == index){
+    let repeatedCartItem = new CartProduct(index, arrayListFruits[index].product, arrayListFruits[index].quantity, arrayListFruits[index].price, arrayListFruits[index].discount, arrayListFruits[index].itemToCart);
+    arrayCartList[index].itemToCart += 1;
+    this.cartNumberDisplay;
+    arrayCartList[index].getDisplayItem();
+    this.getTotalCartValue;
+  }}
+};
 
   get cartNumberDisplay(){
     let i = 0;
