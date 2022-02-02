@@ -1,8 +1,10 @@
 import { ProductDisplay } from "./ProductDisplay.js";
 import { CartDisplay } from "./CartDisplay.js";
+import { CartProduct } from "./CartProduct.js";
 
 const productDisplay = new ProductDisplay();
 const cartDisplay = new CartDisplay();
+const cartProduct = new CartProduct();
 
 productDisplay.startProduct();
 
@@ -50,7 +52,7 @@ const toCart = (index) => {
   cartDisplay.addProductToCart(index);
 }
 const addCart = (index) => {
-  cartDisplay.addQuantityCart(index);
+  cartProduct.addQuantityCart(index);
 }
 
 //Insersione onclick="" allo scopo del JS
