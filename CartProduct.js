@@ -1,5 +1,6 @@
 import { arrayCartList, CartDisplay } from "./CartDisplay.js";
 import { arrayListFruits } from "./ProductDisplay.js";
+import { AdmPanel } from "./AdmPanel.js";
 
 export class CartProduct {
   constructor(id, product, quantity, price, discount, itemToCart){
@@ -32,23 +33,26 @@ export class CartProduct {
   
   //addQuantityCart Display button
   addQuantityCart = (index) => {
-    if (arrayListFruits[index].quantity == 0) {
+    if (arrayListFruits.find(item => item.product === arrayCartList[index].product).quantity == 0) {
       document.querySelector("#modalProduct").style.display = "flex";
       document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
 
-    } else if (arrayCartList[index].quantity >= arrayCartList[index].itemToCart) {
+    } else if (arrayListFruits.find(item => item.product === arrayCartList[index].product).quantity >= 1) {
       arrayCartList[index].itemToCart += 1;
-      arrayListFruits[index].quantity -= 1;
+      arrayListFruits.find(item => item.product === arrayCartList[index].product).quantity -= 1;
       this.refreshCart;
     }
   }; 
   
   removeQuantityCart = (index) => {
-    if (arrayCartList[index].itemToCart <= 1) {
+    console.log(arrayCartList[index].itemToCart)
+    if (arrayCartList[index].itemToCart <= 0) {
+      
+      this.getDisplayItem(); 
       return;
     } else {
       arrayCartList[index].itemToCart -= 1;
-      arrayListFruits[index].quantity += 1;
+      arrayListFruits.find(item => item.product === arrayCartList[index].product).quantity += 1;
       this.refreshCart;
     }
   }
@@ -57,6 +61,7 @@ export class CartProduct {
   get refreshCart(){
     new CartDisplay().cartNumberDisplay;
     new CartDisplay().getTotalCartValue;
-    this.getDisplayItem();   
+    new AdmPanel().getListAdm();
+    this.getDisplayItem(); 
   }
 };

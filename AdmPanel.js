@@ -39,4 +39,11 @@ export class AdmPanel {
       this.getListAdm();
     }
   }
+
+  deleteProductAdm = (index) => {
+    console.log(index);
+    console.log(arrayListFruits);
+    arrayListFruits.splice(index, (index+1));
+    this.getListAdm();
+  }
 };

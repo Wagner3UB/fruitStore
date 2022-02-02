@@ -65,6 +65,9 @@ const addAdm = (index) => {
 const removeAdm = (index) => {
   admPanel.removeQuantityAdm(index);
 }
+const deleteAdm = (index) => {
+  admPanel.deleteProductAdm(index);
+}
 
 //Insersione onclick="" allo scopo del JS
 //Sono pulsanti della pagina con l'evento onclick 
@@ -75,3 +78,4 @@ window.addCart = addCart;
 window.removeCart = removeCart;
 window.addAdm = addAdm;
 window.removeAdm = removeAdm;
+window.deleteAdm = deleteAdm;
