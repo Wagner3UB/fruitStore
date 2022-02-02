@@ -1,15 +1,16 @@
 import { Product } from "./Product.js";
 import { validations, denied, checked } from "./validations.js";
+import { AdmPanel } from "./AdmPanel.js";
 
 export let arrayListFruits = [];
 
 export class ProductDisplay {
   //Creazione 1° item della pagina e generazione della vetrina e panello adm
   startProduct = () => {
-  const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);
-  arrayListFruits.push(startObject);
-  startObject.getListHome();
-  startObject.getListAdm();
+    const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);
+    arrayListFruits.push(startObject);
+    startObject.getListHome();
+    new AdmPanel().getListAdm();
   }
 
   get addNewItem() {

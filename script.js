@@ -54,6 +54,9 @@ const toCart = (index) => {
 const addCart = (index) => {
   cartProduct.addQuantityCart(index);
 }
+const removeCart = (index) => {
+  cartProduct.removeQuantityCart(index);
+}
 
 //Insersione onclick="" allo scopo del JS
 //Sono pulsanti della pagina con l'evento onclick 
@@ -61,3 +64,4 @@ window.addHome = addHome;
 window.removeHome = removeHome;
 window.toCart = toCart;
 window.addCart = addCart;
+window.removeCart = removeCart;

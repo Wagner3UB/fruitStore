@@ -1,4 +1,4 @@
-import { arrayCartList } from "./CartDisplay.js";
+import { arrayCartList, CartDisplay } from "./CartDisplay.js";
 import { arrayListFruits } from "./ProductDisplay.js";
 
 export class CartProduct {
@@ -17,8 +17,7 @@ export class CartProduct {
     const listCartCreator = (item, index) => {
       listDisplayCart += '<ul class="productCartItem"><li>' 
       + item.product +'</li><li class="middleProductCart"><button class="addCart" onclick="addCart(' + index + ')">+</button><p>'
-      + item.itemToCart + '</p><button onclick="removeQuantityCart(' 
-      + item.index + ')">-</button></li><li class="middleProductCart cartProductDiscount">'
+      + item.itemToCart + '</p><button onclick="removeCart(' + index + ')">-</button></li><li class="middleProductCart cartProductDiscount">'
       + item.discount +'<p>%</p></li><li class="lastProductCart"><p>' 
       + item.getTotalProduct.toFixed(2) + '</p><p>€</p></li></ul>';
     }
@@ -36,22 +35,29 @@ export class CartProduct {
     if (arrayListFruits[index].quantity == 0) {
       document.querySelector("#modalProduct").style.display = "flex";
       document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
-      
-    } else if (arrayListFruits[index].quantity >= arrayListFruits[index].itemToCart) {
-      arrayListFruits[index].quantity -= 1;
-  
-      if(arrayCartList.length == 0 || arrayCartList.findIndex(item => item.product === arrayListFruits[index].product) === -1){
-        cartProductCreator(index);
-        this.cartNumberDisplay;
-        arrayCartList[index].getDisplayItem();
-        arrayCartList[index].getTotalCartValue();
 
-      } else if (arrayCartList[index].id == index){
-        arrayCartList[index].itemToCart += 1;
-        this.cartNumberDisplay;
-        arrayCartList[index].getDisplayItem();
-        this.getTotalCartValue;
-      }
+    } else if (arrayCartList[index].quantity >= arrayCartList[index].itemToCart) {
+      console.log(arrayCartList)
+      arrayCartList[index].itemToCart += 1;
+      arrayListFruits[index].quantity -= 1;
+      this.refreshCart;
     }
   }; 
+  
+  removeQuantityCart = (index) => {
+    if (arrayCartList[index].itemToCart <= 1) {
+      return;
+    } else {
+      arrayCartList[index].itemToCart -= 1;
+      arrayListFruits[index].quantity += 1;
+      this.refreshCart;
+    }
+  }
+
+  //Aggiorna il carrello dopo qualche modifica sulla quantità
+  get refreshCart(){
+    new CartDisplay().cartNumberDisplay;
+    new CartDisplay().getTotalCartValue;
+    this.getDisplayItem();   
+  }
 };
