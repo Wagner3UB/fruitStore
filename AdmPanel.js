@@ -1,5 +1,6 @@
 import { arrayCartList } from "./CartDisplay.js";
 import { arrayListFruits } from "./ProductDisplay.js";
+import { Product } from "./Product.js";
 
 export class AdmPanel {
 
@@ -40,10 +41,14 @@ export class AdmPanel {
     }
   }
 
-  deleteProductAdm = (index) => {
-    console.log(index);
-    console.log(arrayListFruits);
+  deleteProductAdm = () => {
+    document.querySelector("#modalAlertAdm").style.display = "flex";
+
+  }
+
+  modalAlertAdmYes = () => {
     arrayListFruits.splice(index, (index+1));
     this.getListAdm();
+    new Product().getListHome();
   }
 };

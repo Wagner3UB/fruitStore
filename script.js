@@ -44,6 +44,11 @@ document.querySelector("#modalProductClose").addEventListener("click", modalProd
 //add new product
 document.getElementById("productAdd").addEventListener("click", function(){productDisplay.addNewItem;});
 
+//delete adm product
+document.getElementById("modalAlertAdmYes").addEventListener("click", new AdmPanel().deleteProductAdm);
+
+//cancel delete adm product
+
 const addHome = (index) => {
   productDisplay.addQuantityHome(index);
 }
