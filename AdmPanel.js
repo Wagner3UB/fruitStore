@@ -1,3 +1,4 @@
+import { arrayCartList } from "./CartDisplay.js";
 import { arrayListFruits } from "./ProductDisplay.js";
 
 export class AdmPanel {
@@ -5,6 +6,7 @@ export class AdmPanel {
   //Creazione lista pannello Adm
   getListAdm = () => {
     let listDisplayAdm = "";
+
     const listAdmCreator = (item, index) => {
       listDisplayAdm += '<ul><li><img src="' 
       + item.image + '" alt="' 
@@ -18,4 +20,23 @@ export class AdmPanel {
     arrayListFruits.forEach(listAdmCreator);
     document.querySelector("#productAdm").innerHTML = listDisplayAdm;
   };
+
+  addQuantityAdm = (index) => {
+    arrayListFruits[index].quantity += 1;
+    if(arrayCartList.length != 0){
+      arrayCartList.find(item => item.id === index).quantity += 1;
+    }
+    this.getListAdm();
+  }
+  removeQuantityAdm = (index) => {
+    if(arrayListFruits[index].quantity <= 0){
+      return;
+    } else {
+      arrayListFruits[index].quantity -= 1;
+      if(arrayCartList.length != 0){
+        arrayCartList.find(item => item.id === index).quantity -= 1;
+      }
+      this.getListAdm();
+    }
+  }
 };

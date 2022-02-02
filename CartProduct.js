@@ -37,7 +37,6 @@ export class CartProduct {
       document.querySelector("#modalProductText").innerHTML = "Dispiace, purtroppo non abbiamo più di questo prodotto in stock";
 
     } else if (arrayCartList[index].quantity >= arrayCartList[index].itemToCart) {
-      console.log(arrayCartList)
       arrayCartList[index].itemToCart += 1;
       arrayListFruits[index].quantity -= 1;
       this.refreshCart;

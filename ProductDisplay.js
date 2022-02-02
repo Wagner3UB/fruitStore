@@ -22,7 +22,7 @@ export class ProductDisplay {
     if (denied == false) {
       arrayListFruits.push(object);
       object.getListHome();
-      object.getListAdm();
+      new AdmPanel().getListAdm();
       this.clearInput;
     };
   };

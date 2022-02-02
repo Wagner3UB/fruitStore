@@ -1,5 +1,6 @@
 import { CartProduct } from "./CartProduct.js";
 import { arrayListFruits} from "./ProductDisplay.js";
+import { AdmPanel } from "./AdmPanel.js";
 
 export let arrayCartList = [];
 
@@ -31,12 +32,14 @@ export class CartDisplay{
         this.cartNumberDisplay;
         this.getTotalCartValue;
         arrayCartList.find(item => item.id === index).getDisplayItem();
+        new AdmPanel().getListAdm();
 
       } else if (arrayCartList.find(item => item.id === index)){
         arrayCartList.find(item => item.id === index).itemToCart += arrayListFruits[index].itemToCart;
         this.cartNumberDisplay;
         this.getTotalCartValue;
         arrayCartList.find(item => item.id === index).getDisplayItem();
+        new AdmPanel().getListAdm();
       }
     }
   };

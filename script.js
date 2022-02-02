@@ -1,10 +1,12 @@
 import { ProductDisplay } from "./ProductDisplay.js";
 import { CartDisplay } from "./CartDisplay.js";
 import { CartProduct } from "./CartProduct.js";
+import { AdmPanel } from "./AdmPanel.js";
 
 const productDisplay = new ProductDisplay();
 const cartDisplay = new CartDisplay();
 const cartProduct = new CartProduct();
+const admPanel = new AdmPanel();
 
 productDisplay.startProduct();
 
@@ -57,6 +59,12 @@ const addCart = (index) => {
 const removeCart = (index) => {
   cartProduct.removeQuantityCart(index);
 }
+const addAdm = (index) => {
+  admPanel.addQuantityAdm(index);
+}
+const removeAdm = (index) => {
+  admPanel.removeQuantityAdm(index);
+}
 
 //Insersione onclick="" allo scopo del JS
 //Sono pulsanti della pagina con l'evento onclick 
@@ -65,3 +73,5 @@ window.removeHome = removeHome;
 window.toCart = toCart;
 window.addCart = addCart;
 window.removeCart = removeCart;
+window.addAdm = addAdm;
+window.removeAdm = removeAdm;
