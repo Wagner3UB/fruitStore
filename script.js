@@ -5,12 +5,12 @@ import { CartDisplay } from "./CartDisplay.js";
 import { CartProduct } from "./CartProduct.js";
 import { AdmPanel } from "./AdmPanel.js";
 
-const productDisplay = new ProductDisplay();
+
 const cartDisplay = new CartDisplay();
 const cartProduct = new CartProduct();
 const admPanel = new AdmPanel();
 
-productDisplay.startProduct();
+ProductDisplay.startProduct();
 
 //open cart
 const cartDisplayOn = () => {
@@ -44,13 +44,13 @@ const modalProductOff = () => {
 document.querySelector("#modalProductClose").addEventListener("click", modalProductOff);
 
 //add new product
-document.getElementById("productAdd").addEventListener("click", function(){productDisplay.addNewItem;});
+document.getElementById("productAdd").addEventListener("click", function(){ProductDisplay.addNewItem;});
 
 const addHome = (index) => {
-  productDisplay.addQuantityHome(index);
+  ProductDisplay.addQuantityHome(index);
 }
 const removeHome = (index) => {
-  productDisplay.removeQuantityHome(index);
+  ProductDisplay.removeQuantityHome(index);
 }
 const toCart = (index) => {
   cartDisplay.addProductToCart(index);
