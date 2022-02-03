@@ -43,10 +43,9 @@ export class AdmPanel {
   }
 
   deleteProductAdm = (index) => {
+    //creare pulsanti conferma cancellazione 
     document.getElementById("deleteButtons").innerHTML = '<button id="modalAlertAdmNo"><span class="material-icons-outlined">undo</span>No</button> <button id="modalAlertAdmYes" onclick="modalAlertAdmYes(' + index + ')">Sì<span class="material-icons-outlined">delete</span></button>';
-
     document.querySelector("#modalAlertAdm").style.display = "flex";
-
     document.getElementById("modalAlertAdmProduct").innerHTML = arrayListFruits[index].product;
 
     //cancel delete adm product
@@ -54,6 +53,7 @@ export class AdmPanel {
 
   }
 
+  //Pulsante conferma cancellazione
   modalAdmYes = (index) => {
     arrayListFruits.splice(index, (index + 1));
     this.getListAdm();
@@ -61,6 +61,7 @@ export class AdmPanel {
     document.querySelector("#modalAlertAdm").style.display = "none";
   }
 
+  //pulsante anulla cancellazione
   deleteProductAdmNO = () => {
     document.querySelector("#modalAlertAdm").style.display = "none";
   }

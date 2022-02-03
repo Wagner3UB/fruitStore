@@ -1,5 +1,4 @@
 "use strict";
-
 import { CartProduct } from "./CartProduct.js";
 import { arrayListFruits} from "./ProductDisplay.js";
 import { AdmPanel } from "./AdmPanel.js";

@@ -44,7 +44,7 @@ export class ProductDisplay {
 
   //addQuantityHome button
   //aggiunge 1 item alla quantità che sarà inviata al carrello
-  addQuantityHome = (index) => {
+  static addQuantityHome = (index) => {
 
     //validazione quantità item disponibile
     if (arrayListFruits[index].quantity > arrayListFruits[index].itemToCart) {
