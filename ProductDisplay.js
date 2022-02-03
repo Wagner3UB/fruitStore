@@ -9,6 +9,8 @@ export class ProductDisplay {
   startProduct = () => {
     const startObject = new Product ("Banana", "Gialla, 12 unità per mazzo e proveniente dalla Costa Rica.", 5, 20, 5, "https://www.nonsprecare.it/wp-content/uploads/2018/12/benefici-delle-banane.jpg", "Un mazzo di banane gialle", 1);
     arrayListFruits.push(startObject);
+    const startObject2 = new Product ("Mango", "Gialla e rosso, 1 unità, +- 300grammi e proveniente dal Brasile.", 10, 10, 10, "https://www.basko.it/p/wp-content/uploads/2021/05/MANGO_900x450px.jpg", "3 manghi, una tagliata in pezzi piccoli", 1);
+    arrayListFruits.push(startObject2);
     startObject.getListHome();
     new AdmPanel().getListAdm();
   }

@@ -21,8 +21,8 @@ export class Product{
       + item.imageAlt + ' "></li><li><h2>' 
       + item.product + '</h2><p>' 
       + item.description + '</p></li><li class="col-1"><h4>Prezzo:</h4><p>' 
-      + item.price.toFixed(2) + '</p><p>€</p></li><li class="col-1 add"><button onclick="addHome('+ index +')">+</button><p class="quantityDisplayProduct">'
-      + item.itemToCart  + '</p><button onclick="removeHome(' + index + ')">-</button></li><li class="col-1 color"><h4>Totale:</h4><p id="totalProduct">'
+      + item.price.toFixed(2) + '</p><p>€</p></li><li class="col-1 add"><button onclick="removeHome(' + index + ')">-</button><p class="quantityDisplayProduct">'
+      + item.itemToCart  + '</p><button onclick="addHome('+ index +')">+</button></li><li class="col-1 color"><h4>Totale:</h4><p id="totalProduct">'
       + (item.price * item.itemToCart).toFixed(2) +'</p><p>€</p></li><li class="col-1 add_to_cart"><button id="add_to_cart" onclick="toCart('+ index +')"><span class="material-icons-outlined">add_shopping_cart</span></button></li></ul>'
     }
     arrayListFruits.forEach(getListCreator);

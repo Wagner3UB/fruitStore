@@ -53,6 +53,7 @@ main li:nth-of-type(1){
 }
 main li:nth-of-type(2){
   width: 40%;
+  padding-left: 10px;
 }
 body.home img{
   width: 200px;
@@ -167,6 +168,7 @@ body.home img{
   padding: 5px 10px;
 }
 .productCartTotal{
+  position: relative;
   width: 100%;
   margin-right: 0;
   display: flex;
@@ -182,9 +184,23 @@ body.home img{
 }
 .productCartTotal li:nth-of-type(2){
   color: rgb(160, 15, 15);
+  opacity: 0;
 }
-.productCartTotal li:last-child{
+.productCartTotal li:last-of-type{
   border-top: 2px dotted #333;
+  color: rgb(17, 17, 179);
+}
+#discountButton{
+  display: none;
+  width: auto;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgb(211, 214, 36);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 15px;
+  right: 25%;
 }
 
 /*FOOTER*/

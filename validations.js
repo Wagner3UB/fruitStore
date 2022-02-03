@@ -62,8 +62,6 @@ export const validations = () => {
       alertDiscount = "Campo SCONTO vuoto, riprova";
     } else if (discountInput < 0) {
       alertDiscount = "Il campo SCONTO non può essere negativo";
-    } else if (discountInput == 0){
-      alertDiscount = "Il campo SCONTO non può essere ZERO";
     } else{
       checked.push(discountInput)
     };

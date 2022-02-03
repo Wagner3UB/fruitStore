@@ -33,6 +33,7 @@ export class CartDisplay{
         this.getTotalCartValue;
         arrayCartList.find(item => item.id === index).getDisplayItem();
         new AdmPanel().getListAdm();
+        document.getElementById("discountButton").style.display = "unset";
 
       } else if (arrayCartList.find(item => item.id === index)){
         arrayCartList.find(item => item.id === index).itemToCart += arrayListFruits[index].itemToCart;
@@ -44,8 +45,6 @@ export class CartDisplay{
     }
   };
 
-
-
   //Numero su carrello
   get cartNumberDisplay(){
     let i = 0;
@@ -55,13 +54,24 @@ export class CartDisplay{
     document.querySelector("#cartNumberDisplay").innerHTML = i;
   };
 
-  //Total Value Cart
+  //Total Value Cart before Final discount
    get getTotalCartValue(){
     let totalCartValue = 0;
     arrayCartList.forEach(function (item){
       totalCartValue += item.getTotalProduct;
     });
     document.querySelector("#total").innerHTML = totalCartValue.toFixed(2);
+    document.querySelector("#finalCartValue").innerHTML = totalCartValue.toFixed(2);
+
+    const finalDiscount = () => {
+      document.querySelector(".productCartTotal li:nth-of-type(2)").style.opacity= 1;
+      let cartValue = totalCartValue*0.8;
+      document.querySelector("#finalCartValue").innerHTML = cartValue.toFixed(2);
+    }
+
+    document.getElementById("discountButton").addEventListener("click", finalDiscount);
+
+    
   };
 
 }
