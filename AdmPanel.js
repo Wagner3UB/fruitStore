@@ -41,14 +41,26 @@ export class AdmPanel {
     }
   }
 
-  deleteProductAdm = () => {
+  deleteProductAdm = (index) => {
+    document.getElementById("deleteButtons").innerHTML = '<button id="modalAlertAdmNo"><span class="material-icons-outlined">undo</span>No</button> <button id="modalAlertAdmYes" onclick="modalAlertAdmYes(' + index + ')">Sì<span class="material-icons-outlined">delete</span></button>';
+
     document.querySelector("#modalAlertAdm").style.display = "flex";
+
+    document.getElementById("modalAlertAdmProduct").innerHTML = arrayListFruits[index].product;
+
+    //cancel delete adm product
+    document.getElementById("modalAlertAdmNo").addEventListener("click", new AdmPanel().deleteProductAdmNO);
 
   }
 
-  modalAlertAdmYes = () => {
-    arrayListFruits.splice(index, (index+1));
+  modalAdmYes = (index) => {
+    arrayListFruits.splice(index, (index + 1));
     this.getListAdm();
     new Product().getListHome();
+    document.querySelector("#modalAlertAdm").style.display = "none";
+  }
+
+  deleteProductAdmNO = () => {
+    document.querySelector("#modalAlertAdm").style.display = "none";
   }
 };

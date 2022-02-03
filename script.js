@@ -44,11 +44,6 @@ document.querySelector("#modalProductClose").addEventListener("click", modalProd
 //add new product
 document.getElementById("productAdd").addEventListener("click", function(){productDisplay.addNewItem;});
 
-//delete adm product
-document.getElementById("modalAlertAdmYes").addEventListener("click", new AdmPanel().deleteProductAdm);
-
-//cancel delete adm product
-
 const addHome = (index) => {
   productDisplay.addQuantityHome(index);
 }
@@ -73,6 +68,9 @@ const removeAdm = (index) => {
 const deleteAdm = (index) => {
   admPanel.deleteProductAdm(index);
 }
+const modalAlertAdmYes = (index) => {
+  admPanel.modalAdmYes(index);
+};
 
 //Insersione onclick="" allo scopo del JS
 //Sono pulsanti della pagina con l'evento onclick 
@@ -84,3 +82,4 @@ window.removeCart = removeCart;
 window.addAdm = addAdm;
 window.removeAdm = removeAdm;
 window.deleteAdm = deleteAdm;
+window.modalAlertAdmYes = modalAlertAdmYes;
