@@ -1,3 +1,5 @@
+"use strict";
+
 import { arrayCartList, CartDisplay } from "./CartDisplay.js";
 import { arrayListFruits } from "./ProductDisplay.js";
 import { AdmPanel } from "./AdmPanel.js";
@@ -45,7 +47,6 @@ export class CartProduct {
   }; 
   
   removeQuantityCart = (index) => {
-    console.log(arrayCartList[index].itemToCart)
     if (arrayCartList[index].itemToCart <= 0) {
       
       this.getDisplayItem(); 

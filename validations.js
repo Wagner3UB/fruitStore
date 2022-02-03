@@ -1,3 +1,5 @@
+"use strict";
+
 export let denied = false;
 
 export let checked = [];

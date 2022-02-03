@@ -1,3 +1,4 @@
+"use strict";
 import { arrayCartList } from "./CartDisplay.js";
 import { arrayListFruits } from "./ProductDisplay.js";
 import { Product } from "./Product.js";

@@ -1,3 +1,5 @@
+"use strict";
+
 import { Product } from "./Product.js";
 import { validations, denied, checked } from "./validations.js";
 import { AdmPanel } from "./AdmPanel.js";

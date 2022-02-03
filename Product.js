@@ -1,3 +1,5 @@
+"use strict";
+
 import { arrayListFruits} from "./ProductDisplay.js";
 
 export class Product{

@@ -1,3 +1,5 @@
+"use strict";
+
 import { ProductDisplay } from "./ProductDisplay.js";
 import { CartDisplay } from "./CartDisplay.js";
 import { CartProduct } from "./CartProduct.js";
