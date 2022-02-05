@@ -1,0 +1,117 @@
+/*CARRELLO*/
+#cart{
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgba(151, 144, 40, 0.753);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none; /*Questo deve essere cambiato a flex*/
+  justify-content: center;
+  align-items: center;
+}
+.cartBox{
+  position: relative;
+  width: 80%;
+  height: 1000px;
+  max-height: 80%;
+  padding: 20px;
+  background-color: #ddd;
+  h2{
+    font-family: 'Lobster', cursive;
+    color: rgb(160, 15, 15);
+  }
+}
+.cartClose{
+  content: "x";
+  width: unset;
+  position: absolute;
+  top: -25px;
+  right: -15px;
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.titleBar{
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+  h3{
+    width: calc(100%/3);
+}
+}
+#productCart{
+  overflow-y: auto;
+  height: 60%;
+  max-height: 60%;
+  padding-right: 20px;
+}
+.productCartItem{
+  display: flex;
+  padding: 20px 0;
+  li{
+    width: calc(100%/3);
+    display: flex;
+    align-items: center;
+  }
+  li:nth-of-type(2){
+    button{
+      width: 30px;
+      padding: 5px 0;
+      background-color: #aaa;
+      border-radius: 4px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+      &:hover{
+        box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+    p{
+      padding: 5px 10px;
+    } 
+  }
+}
+.middleProductCart{
+  text-align: center;
+  justify-content: center;
+}
+.lastProductCart{
+  text-align: end;
+  justify-content: end;
+}
+.productCartTotal{
+  position: relative;
+  width: 100%;
+  margin-right: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  padding-top: 30px;
+  li{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    &:nth-of-type(2){
+      color: rgb(160, 15, 15);
+      opacity: 0;
+    }
+    &:last-of-type{
+      border-top: 2px dotted #333;
+      color: rgb(17, 17, 179);
+    }
+  }
+}
+#discountButton{
+  display: none;
+  width: auto;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgb(211, 214, 36);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 15px;
+  right: 25%;
+}
