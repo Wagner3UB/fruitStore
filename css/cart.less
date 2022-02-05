@@ -21,7 +21,7 @@
   background-color: #ddd;
   h2{
     font-family: 'Lobster', cursive;
-    color: rgb(160, 15, 15);
+    color: @text-red;
   }
 }
 .cartClose{
@@ -62,9 +62,9 @@
       padding: 5px 0;
       background-color: #aaa;
       border-radius: 4px;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: @box-shadow-button-outside-s;
       &:hover{
-        box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: inset @box-shadow-button-outside-s;
       }
     }
     p{
@@ -94,7 +94,7 @@
     justify-content: space-between;
     align-items: baseline;
     &:nth-of-type(2){
-      color: rgb(160, 15, 15);
+      color: @text-red;
       opacity: 0;
     }
     &:last-of-type{
@@ -110,8 +110,11 @@
   padding: 10px;
   border-radius: 15px;
   background-color: rgb(211, 214, 36);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: @box-shadow-button-outside-l;
   position: absolute;
   bottom: 15px;
   right: 25%;
+  &:hover{
+    box-shadow: inset @box-shadow-button-outside-l;
+  }
 }

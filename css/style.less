@@ -1,4 +1,5 @@
-@import "cart.less";
+@import "variables.less";
+@import "mixins.less";
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap');
 
@@ -9,7 +10,7 @@ p,li{
 h1{
   font-family: 'Lobster', cursive;
   font-size: 3rem;
-  color: rgb(160, 15, 15);
+  color: @text-red;
 }
 h2, h3, h4{
   font-family: 'Montserrat', sans-serif;
@@ -44,9 +45,7 @@ body.home{
   main{
     padding: 10px 20px;
     ul{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      .display-flex-center;
       margin: 30px 0;
     }
     li:nth-of-type(1){
@@ -73,9 +72,9 @@ body.home{
         width: 25px;
         height: 25px;
         border-radius: 5px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: @box-shadow-button-outside-s;
         &:hover{
-          box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: inset @box-shadow-button-outside-s;
         }
       }
     }
@@ -92,9 +91,9 @@ body.home{
         background-color: #ddd;
         border-radius: 4px;
         padding: 8px 12px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+        box-shadow: @box-shadow-button-outside-s;
         &:hover{
-          box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: inset @box-shadow-button-outside-s;
         }
       }
     }
@@ -105,9 +104,7 @@ body.home{
   }
 }
 
-
-
-
+@import "cart.less";
 
 
 /*FOOTER*/
@@ -121,25 +118,23 @@ footer{
   padding: 30px;
 }
 footer button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .display-flex-center;
   width: 200px;
   margin-top: 20px;
   padding: 10px 0;
   border-radius: 15px;
   background-color: rgb(231, 235, 38);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: @box-shadow-button-outside-l;
 }
 footer button:hover{
-  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: inset @box-shadow-button-outside-l;
 }
 
 /* ADM PANEL */
 #admPanel{
   font-size: 16px;
   background-color: rgb(252, 252, 228);
-  display: flex;
+  .display-flex-center;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -147,8 +142,6 @@ footer button:hover{
   left: 0;
   z-index: 1;
   display: none; /*Questo deve essere cambiato a flex*/
-  justify-content: center;
-  align-items: center;
 }
 #admPanel main{
   width: calc(2*100vw/3);
@@ -206,16 +199,14 @@ margin-left: 5px;
   width: 100px;
   padding: 5px 0;
   border: 1px solid #333;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.363);
+  box-shadow: @box-shadow-button-outside-s;
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .display-flex-center;
   color: #666;
   font-size: 0.8rem;
 }
 #admPanel aside button:hover{
-  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: inset @box-shadow-button-outside-l;
 }
 
 #admPanel aside button span{
@@ -242,14 +233,12 @@ margin-left: 5px;
 #modalProduct div, #modalAlertAdm div:first-child{
   width: 700px;
   height: 10%;
-  display: flex;
+  .display-flex-center;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   background-color: #dddddd;
   margin-bottom: 30px;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);  
+  box-shadow: @box-shadow-button-outside-l;  
 }
 #modalProductText{
   font-weight: 400;
@@ -258,15 +247,12 @@ margin-left: 5px;
   width: 150px;
   border-radius: 5px;
   background-color: rgb(231, 235, 38);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: @box-shadow-button-outside-l;
   padding: 5px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  .display-flex-center;
 }
 #modalProduct button:hover{
-  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: inset @box-shadow-button-outside-l;
 }
 #modalAlertAdm div:last-child{
   display: flex;
@@ -277,6 +263,6 @@ margin-left: 5px;
   width: 100%;
   text-align: center;
   padding-bottom: 10px;
-  color: rgb(168, 50, 29);
+  color: @text-red;
   font-weight: 300;
 }

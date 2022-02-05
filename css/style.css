@@ -1,117 +1,7 @@
-/*CARRELLO*/
-#cart {
-  width: 100vw;
-  height: 100vh;
-  padding: 20px;
-  background-color: rgba(151, 144, 40, 0.753);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: none;
-  /*Questo deve essere cambiato a flex*/
+.display-flex-center {
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-.cartBox {
-  position: relative;
-  width: 80%;
-  height: 1000px;
-  max-height: 80%;
-  padding: 20px;
-  background-color: #ddd;
-}
-.cartBox h2 {
-  font-family: 'Lobster', cursive;
-  color: #a00f0f;
-}
-.cartClose {
-  content: "x";
-  width: unset;
-  position: absolute;
-  top: -25px;
-  right: -15px;
-  font-size: 1.6rem;
-  font-family: 'Montserrat', sans-serif;
-}
-.titleBar {
-  display: flex;
-  justify-content: center;
-  padding-right: 20px;
-}
-.titleBar h3 {
-  width: calc(33.33333333%);
-}
-#productCart {
-  overflow-y: auto;
-  height: 60%;
-  max-height: 60%;
-  padding-right: 20px;
-}
-.productCartItem {
-  display: flex;
-  padding: 20px 0;
-}
-.productCartItem li {
-  width: calc(33.33333333%);
-  display: flex;
-  align-items: center;
-}
-.productCartItem li:nth-of-type(2) button {
-  width: 30px;
-  padding: 5px 0;
-  background-color: #aaa;
-  border-radius: 4px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-}
-.productCartItem li:nth-of-type(2) button:hover {
-  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
-}
-.productCartItem li:nth-of-type(2) p {
-  padding: 5px 10px;
-}
-.middleProductCart {
-  text-align: center;
-  justify-content: center;
-}
-.lastProductCart {
-  text-align: end;
-  justify-content: end;
-}
-.productCartTotal {
-  position: relative;
-  width: 100%;
-  margin-right: 0;
-  display: flex;
-  flex-flow: column;
-  align-items: flex-end;
-  padding-top: 30px;
-}
-.productCartTotal li {
-  width: 20%;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.productCartTotal li:nth-of-type(2) {
-  color: #a00f0f;
-  opacity: 0;
-}
-.productCartTotal li:last-of-type {
-  border-top: 2px dotted #333;
-  color: #1111b3;
-}
-#discountButton {
-  display: none;
-  width: auto;
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 15px;
-  background-color: #d3d624;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
-  position: absolute;
-  bottom: 15px;
-  right: 25%;
 }
 @font-face {
   font-family: 'Lobster';
@@ -239,7 +129,7 @@ body.home main .add_to_cart #addToCartButton {
   background-color: #ddd;
   border-radius: 4px;
   padding: 8px 12px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 body.home main .add_to_cart #addToCartButton:hover {
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
@@ -247,6 +137,124 @@ body.home main .add_to_cart #addToCartButton:hover {
 body.home img {
   width: 200px;
   border: 5px solid;
+}
+/*CARRELLO*/
+#cart {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgba(151, 144, 40, 0.753);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  /*Questo deve essere cambiato a flex*/
+  justify-content: center;
+  align-items: center;
+}
+.cartBox {
+  position: relative;
+  width: 80%;
+  height: 1000px;
+  max-height: 80%;
+  padding: 20px;
+  background-color: #ddd;
+}
+.cartBox h2 {
+  font-family: 'Lobster', cursive;
+  color: #a00f0f;
+}
+.cartClose {
+  content: "x";
+  width: unset;
+  position: absolute;
+  top: -25px;
+  right: -15px;
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.titleBar {
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+}
+.titleBar h3 {
+  width: calc(33.33333333%);
+}
+#productCart {
+  overflow-y: auto;
+  height: 60%;
+  max-height: 60%;
+  padding-right: 20px;
+}
+.productCartItem {
+  display: flex;
+  padding: 20px 0;
+}
+.productCartItem li {
+  width: calc(33.33333333%);
+  display: flex;
+  align-items: center;
+}
+.productCartItem li:nth-of-type(2) button {
+  width: 30px;
+  padding: 5px 0;
+  background-color: #aaa;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.productCartItem li:nth-of-type(2) button:hover {
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.productCartItem li:nth-of-type(2) p {
+  padding: 5px 10px;
+}
+.middleProductCart {
+  text-align: center;
+  justify-content: center;
+}
+.lastProductCart {
+  text-align: end;
+  justify-content: end;
+}
+.productCartTotal {
+  position: relative;
+  width: 100%;
+  margin-right: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  padding-top: 30px;
+}
+.productCartTotal li {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.productCartTotal li:nth-of-type(2) {
+  color: #a00f0f;
+  opacity: 0;
+}
+.productCartTotal li:last-of-type {
+  border-top: 2px dotted #333;
+  color: #1111b3;
+}
+#discountButton {
+  display: none;
+  width: auto;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #d3d624;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 15px;
+  right: 25%;
+}
+#discountButton:hover {
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
 }
 /*FOOTER*/
 footer {
@@ -277,6 +285,8 @@ footer button:hover {
   font-size: 16px;
   background-color: #fcfce4;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -285,8 +295,6 @@ footer button:hover {
   z-index: 1;
   display: none;
   /*Questo deve essere cambiato a flex*/
-  justify-content: center;
-  align-items: center;
 }
 #admPanel main {
   width: calc(66.66666667vw);
@@ -344,7 +352,7 @@ footer button:hover {
   width: 100px;
   padding: 5px 0;
   border: 1px solid #333;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.363);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -382,9 +390,9 @@ footer button:hover {
   width: 700px;
   height: 10%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   background-color: #dddddd;
   margin-bottom: 30px;
   border-radius: 5px;
@@ -416,6 +424,6 @@ footer button:hover {
   width: 100%;
   text-align: center;
   padding-bottom: 10px;
-  color: #a8321d;
+  color: #a00f0f;
   font-weight: 300;
 }
