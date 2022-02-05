@@ -1,0 +1,19 @@
+{
+  "name": "fruitstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AdmPanel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wagner3UB/fruitStore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wagner3UB/fruitStore/issues"
+  },
+  "homepage": "https://github.com/Wagner3UB/fruitStore#readme"
+}

@@ -1,139 +1,106 @@
-@font-face {
-  font-family: 'Lobster';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lobster/v27/neILzCirqoswsqX9_oU.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Ew-.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v23/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf) format('truetype');
-}
-p,
-li {
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap');
+
+p,li{
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
 }
-h1 {
+h1{
   font-family: 'Lobster', cursive;
   font-size: 3rem;
-  color: #a00f0f;
+  color: rgb(160, 15, 15);
 }
-h2,
-h3,
-h4 {
+h2, h3, h4{
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
-h2 {
-  font-size: 1.44rem;
-}
-h3 {
-  font-size: 1.2rem;
-}
-h4 {
-  font-size: 0.694rem;
-}
-body.home {
+h2{font-size: 1.44rem;}
+h3{font-size: 1.2rem;}
+h4{font-size: 0.694rem;}
+
+body.home{
   font-size: 16px;
   background-color: rgba(252, 252, 228, 0.194);
   position: relative;
 }
-header {
+header{
   display: flex;
   margin-bottom: 20px;
   padding: 10px 20px;
   background-color: rgba(86, 87, 33, 0.123);
 }
-header div {
+header div{
   width: 80%;
   display: inline-block;
 }
-header button {
+header button{
   width: 100px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
-body.home main {
+body.home main{
   padding: 10px 20px;
 }
-main ul {
+main ul{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 30px 0;
 }
-main li:nth-of-type(1) {
+main li:nth-of-type(1){
   width: 20%;
 }
-main li:nth-of-type(2) {
+main li:nth-of-type(2){
   width: 40%;
   padding-left: 10px;
 }
-body.home img {
+body.home img{
   width: 200px;
   border: 5px solid;
 }
-.col-1 {
+.col-1{
   width: 10%;
   text-align: center;
 }
-.col-1.add {
+.col-1.add{
   display: flex;
 }
-.col-1.add p {
+.col-1.add p{
   width: 25px;
   height: 25px;
   padding-top: 4px;
 }
-.col-1.add button {
+.col-1.add button{
   background-color: #ddd;
   width: 25px;
   height: 25px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
-.col-1.add button:hover {
+.col-1.add button:hover{
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
-.col-1.color {
+.col-1.color{
   padding: 20px 0;
   background-color: rgba(0, 128, 0, 0.173);
 }
-.add_to_cart {
+.add_to_cart{
   display: flex;
   justify-content: center;
 }
-#addToCartButton {
+#addToCartButton{
   width: unset;
   background-color: #ddd;
   border-radius: 4px;
   padding: 8px 12px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
 }
-#addToCartButton:hover {
+#addToCartButton:hover{
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
+
 /*CARRELLO*/
-#cart {
+#cart{
   width: 100vw;
   height: 100vh;
   padding: 20px;
@@ -142,12 +109,11 @@ body.home img {
   top: 0;
   left: 0;
   z-index: 1;
-  display: none;
-  /*Questo deve essere cambiato a flex*/
+  display: none; /*Questo deve essere cambiato a flex*/
   justify-content: center;
   align-items: center;
 }
-.cartBox {
+.cartBox{
   position: relative;
   width: 80%;
   height: 1000px;
@@ -155,7 +121,7 @@ body.home img {
   padding: 20px;
   background-color: #ddd;
 }
-.cartBox .cartClose {
+.cartBox .cartClose{
   content: "x";
   width: unset;
   position: absolute;
@@ -163,56 +129,57 @@ body.home img {
   right: -15px;
   font-size: 1.6rem;
   font-family: 'Montserrat', sans-serif;
+
 }
-.cartBox h2 {
+.cartBox h2{
   font-family: 'Lobster', cursive;
-  color: #a00f0f;
+  color: rgb(160, 15, 15);
 }
-.titleBar {
+.titleBar{
   display: flex;
   justify-content: center;
   padding-right: 20px;
 }
-.titleBar h3 {
+.titleBar h3{
   width: calc(100%/3);
 }
-#productCart {
+#productCart{
   overflow-y: auto;
   height: 60%;
   max-height: 60%;
   padding-right: 20px;
 }
-.productCartItem {
+.productCartItem{
   display: flex;
   padding: 20px 0;
 }
-.productCartItem li {
+.productCartItem li{
   width: calc(100%/3);
   display: flex;
   align-items: center;
 }
-.middleProductCart {
+.middleProductCart{
   text-align: center;
   justify-content: center;
 }
-.lastProductCart {
+.lastProductCart{
   text-align: end;
   justify-content: end;
 }
-.productCartItem li:nth-of-type(2) button {
+.productCartItem li:nth-of-type(2) button{
   width: 30px;
   padding: 5px 0;
   background-color: #aaa;
   border-radius: 4px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
-.productCartItem li:nth-of-type(2) button:hover {
+.productCartItem li:nth-of-type(2) button:hover{
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
-.productCartItem li:nth-of-type(2) p {
+.productCartItem li:nth-of-type(2) p{
   padding: 5px 10px;
 }
-.productCartTotal {
+.productCartTotal{
   position: relative;
   width: 100%;
   margin-right: 0;
@@ -221,34 +188,35 @@ body.home img {
   align-items: flex-end;
   padding-top: 30px;
 }
-.productCartTotal li {
+.productCartTotal li{
   width: 20%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-.productCartTotal li:nth-of-type(2) {
-  color: #a00f0f;
+.productCartTotal li:nth-of-type(2){
+  color: rgb(160, 15, 15);
   opacity: 0;
 }
-.productCartTotal li:last-of-type {
+.productCartTotal li:last-of-type{
   border-top: 2px dotted #333;
-  color: #1111b3;
+  color: rgb(17, 17, 179);
 }
-#discountButton {
+#discountButton{
   display: none;
   width: auto;
   margin-top: 20px;
   padding: 10px;
   border-radius: 15px;
-  background-color: #d3d624;
+  background-color: rgb(211, 214, 36);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 15px;
   right: 25%;
 }
+
 /*FOOTER*/
-footer {
+footer{
   position: fixed;
   bottom: 0;
   display: flex;
@@ -257,7 +225,7 @@ footer {
   align-items: flex-end;
   padding: 30px;
 }
-footer button {
+footer button{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,16 +233,17 @@ footer button {
   margin-top: 20px;
   padding: 10px 0;
   border-radius: 15px;
-  background-color: #e7eb26;
+  background-color: rgb(231, 235, 38);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
 }
-footer button:hover {
+footer button:hover{
   box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
 }
+
 /* ADM PANEL */
-#admPanel {
+#admPanel{
   font-size: 16px;
-  background-color: #fcfce4;
+  background-color: rgb(252, 252, 228);
   display: flex;
   position: absolute;
   width: 100vw;
@@ -282,21 +251,20 @@ footer button:hover {
   top: 0;
   left: 0;
   z-index: 1;
-  display: none;
-  /*Questo deve essere cambiato a flex*/
+  display: none; /*Questo deve essere cambiato a flex*/
   justify-content: center;
   align-items: center;
 }
-#admPanel main {
+#admPanel main{
   width: calc(2*100vw/3);
   height: 100vh;
   padding: 30px;
 }
-#admPanel img {
+#admPanel img{
   width: 100px;
   border: 5px solid;
 }
-#admPanel aside {
+#admPanel aside{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -306,15 +274,15 @@ footer button:hover {
   padding: 30px;
   position: relative;
 }
-#admPanel aside h2 {
+#admPanel aside h2{
   margin-bottom: 20px;
 }
-#admPanel aside h4 {
-  color: #881c1c;
+#admPanel aside h4{
+  color: rgb(136, 28, 28);
   margin-bottom: 5px;
 }
 #admPanel aside input,
-#admPanel aside textarea {
+#admPanel aside textarea{
   background-color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
@@ -323,23 +291,23 @@ footer button:hover {
 #admPanel aside input,
 #admPanel aside input::placeholder,
 #admPanel aside label,
-#admPanel aside textarea {
+#admPanel aside textarea{
   font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
 }
-#admPanel .newProductValorSect {
+#admPanel .newProductValorSect{
   display: flex;
 }
-#admPanel .newProductValorSect div:nth-of-type(1) {
+#admPanel .newProductValorSect div:nth-of-type(1){
   margin-right: 5px;
 }
-#admPanel .newProductValorSect div:nth-of-type(2) {
-  margin: 0 5px;
+#admPanel .newProductValorSect div:nth-of-type(2){
+margin: 0 5px;
 }
-#admPanel .newProductValorSect div:nth-of-type(3) {
-  margin-left: 5px;
+#admPanel .newProductValorSect div:nth-of-type(3){
+margin-left: 5px;
 }
-#admPanel aside button {
+#admPanel aside button{
   width: 100px;
   padding: 5px 0;
   border: 1px solid #333;
@@ -351,19 +319,19 @@ footer button:hover {
   color: #666;
   font-size: 0.8rem;
 }
-#admPanel aside button:hover {
+#admPanel aside button:hover{
   box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
 }
-#admPanel aside button span {
+
+#admPanel aside button span{
   font-size: inherit;
 }
-#admPanel .closePanel {
+#admPanel .closePanel{
   position: absolute;
   bottom: 30px;
 }
 /*MODALE ALERT PRODUCT & */
-#modalProduct,
-#modalAlertAdm {
+#modalProduct, #modalAlertAdm{
   position: absolute;
   z-index: 10;
   width: 100vw;
@@ -376,8 +344,7 @@ footer button:hover {
   justify-content: center;
   align-items: center;
 }
-#modalProduct div,
-#modalAlertAdm div:first-child {
+#modalProduct div, #modalAlertAdm div:first-child{
   width: 700px;
   height: 10%;
   display: flex;
@@ -387,34 +354,34 @@ footer button:hover {
   background-color: #dddddd;
   margin-bottom: 30px;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);  
 }
-#modalProductText {
+#modalProductText{
   font-weight: 400;
 }
-#modalProduct button,
-#modalAlertAdm div:last-child button {
+#modalProduct button, #modalAlertAdm div:last-child button{
   width: 150px;
   border-radius: 5px;
-  background-color: #e7eb26;
+  background-color: rgb(231, 235, 38);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
   padding: 5px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
-#modalProduct button:hover {
+#modalProduct button:hover{
   box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.6);
 }
-#modalAlertAdm div:last-child {
+#modalAlertAdm div:last-child{
   display: flex;
   width: 700px;
   justify-content: space-around;
 }
-#modalAlertAdm div h3:last-of-type {
+#modalAlertAdm div h3:last-of-type{
   width: 100%;
   text-align: center;
   padding-bottom: 10px;
-  color: #a8321d;
+  color: rgb(168, 50, 29);
   font-weight: 300;
 }
