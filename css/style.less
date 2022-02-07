@@ -49,18 +49,34 @@ body.home{
     ul{
       &:extend(.display-flex-center);
       margin: 30px 0;
-    }
-    li:nth-of-type(1){
-      width: 20%;
-    }
-    li:nth-of-type(2){
-      width: 40%;
-      padding-left: 10px;
+      @media @breaking-point-980{
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #00000010;
+      }
+      li{
+        &:nth-of-type(1){
+          width: 20%;
+          @media @breaking-point-980{
+            width: 50%;
+          }
+        }
+        &:nth-of-type(2){
+          width: 40%;
+          padding-left: 10px;
+          @media @breaking-point-980{
+            width: 50%;
+          }
+        }
+      }
     }
     /*Parte referente alla lista creata su JS Product.js*/
     .col-1{
       width: 10%;
       text-align: center;
+      @media @breaking-point-980{
+        width: 20%;
+      }
     }
     .col-1.add{
       display: flex;
@@ -103,6 +119,10 @@ body.home{
   img{
     width: 200px;
     border: 5px solid;
+    @media @breaking-point-980{
+      width: 100%;
+      max-width: 300px;
+    }
   }
 }
 
