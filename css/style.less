@@ -6,15 +6,15 @@
 
 p,li{
   display: inline-block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: @font-sans-serif;
 }
 h1{
-  font-family: 'Lobster', cursive;
+  font-family: @font-cursive;
   font-size: 3rem;
   color: @text-red;
 }
 h2, h3, h4{
-  font-family: 'Montserrat', sans-serif;
+  font-family: @font-sans-serif;
   font-weight: 600;
 }
 h2{font-size: 1.44rem;}
@@ -47,7 +47,7 @@ body.home{
   main{
     padding: 10px 20px;
     ul{
-      .display-flex-center;
+      &:extend(.display-flex-center);
       margin: 30px 0;
     }
     li:nth-of-type(1){
@@ -116,7 +116,7 @@ footer{
   align-items: flex-end;
   padding: 30px;
   button{
-    .display-flex-center;
+    &:extend(.display-flex-center);
     width: 200px;
     margin-top: 20px;
     padding: 10px 0;

@@ -15,7 +15,7 @@
 #modalProduct div, #modalAlertAdm div:first-child{
   width: 700px;
   height: 10%;
-  .display-flex-center;
+  &:extend(.display-flex-center);
   flex-wrap: wrap;
   background-color: #dddddd;
   margin-bottom: 30px;
@@ -31,7 +31,7 @@
   background-color: rgb(231, 235, 38);
   box-shadow: @box-shadow-button-outside-l;
   padding: 5px 0;
-  .display-flex-center;
+  &:extend(.display-flex-center);
 }
 #modalProduct button:hover{
   box-shadow: inset @box-shadow-button-outside-l;
