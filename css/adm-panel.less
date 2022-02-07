@@ -1,0 +1,90 @@
+
+/* ADM PANEL */
+#admPanel{
+  font-size: 16px;
+  background-color: rgb(252, 252, 228);
+  .display-flex-center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none; /*Questo deve essere cambiato a flex*/
+  main{
+    width: calc(2*100vw/3);
+    height: 100vh;
+    padding: 30px;
+  }
+  img{
+    width: 100px;
+    border: 5px solid;
+  }
+  aside{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: calc(100vw/3);
+    height: 100vh;
+    background-color: #ddd;
+    padding: 30px;
+    position: relative;
+    h2{
+      margin-bottom: 20px;
+    }
+    h4{
+      color: rgb(136, 28, 28);
+      margin-bottom: 5px;
+    }
+    input,
+    textarea{
+      background-color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    input,
+    input::placeholder,
+    label,
+    textarea{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+    }
+    button{
+      width: 100px;
+      padding: 5px 0;
+      border: 1px solid #333;
+      box-shadow: @box-shadow-button-outside-s;
+      border-radius: 5px;
+      .display-flex-center;
+      color: #666;
+      font-size: 0.8rem;
+      &:hover{
+        box-shadow: inset @box-shadow-button-outside-l;
+      }
+      span{
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+.newProductValorSect{
+  display: flex;
+  div{
+    &:nth-of-type(1){
+      margin-right: 5px;
+    }
+    &:nth-of-type(2){
+    margin: 0 5px;
+    }
+    &:nth-of-type(3){
+    margin-left: 5px;
+    }
+  }
+}
+
+.closePanel{
+  position: absolute;
+  bottom: 30px;
+}

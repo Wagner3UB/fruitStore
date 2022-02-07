@@ -1,0 +1,50 @@
+/*MODALE ALERT PRODUCT & */
+#modalProduct, #modalAlertAdm{
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.747);
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#modalProduct div, #modalAlertAdm div:first-child{
+  width: 700px;
+  height: 10%;
+  .display-flex-center;
+  flex-wrap: wrap;
+  background-color: #dddddd;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: @box-shadow-button-outside-l;  
+}
+#modalProductText{
+  font-weight: 400;
+}
+#modalProduct button, #modalAlertAdm div:last-child button{
+  width: 150px;
+  border-radius: 5px;
+  background-color: rgb(231, 235, 38);
+  box-shadow: @box-shadow-button-outside-l;
+  padding: 5px 0;
+  .display-flex-center;
+}
+#modalProduct button:hover{
+  box-shadow: inset @box-shadow-button-outside-l;
+}
+#modalAlertAdm div:last-child{
+  display: flex;
+  width: 700px;
+  justify-content: space-around;
+}
+#modalAlertAdm div h3:last-of-type{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  color: @text-red;
+  font-weight: 300;
+}

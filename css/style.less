@@ -1,5 +1,6 @@
-@import "variables.less";
-@import "mixins.less";
+@import "reset";
+@import "variables";
+@import "mixins";
 
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap');
 
@@ -29,7 +30,8 @@ body.home{
     display: flex;
     margin-bottom: 20px;
     padding: 10px 20px;
-    background-color: rgba(86, 87, 33, 0.123);
+    background-color: rgb(252, 252, 228);
+    box-shadow: @box-shadow-button-outside-s;
     div{
       width: 80%;
       display: inline-block;
@@ -104,9 +106,6 @@ body.home{
   }
 }
 
-@import "cart.less";
-
-
 /*FOOTER*/
 footer{
   position: fixed;
@@ -116,153 +115,21 @@ footer{
   justify-content: space-between;
   align-items: flex-end;
   padding: 30px;
-}
-footer button{
-  .display-flex-center;
-  width: 200px;
-  margin-top: 20px;
-  padding: 10px 0;
-  border-radius: 15px;
-  background-color: rgb(231, 235, 38);
-  box-shadow: @box-shadow-button-outside-l;
-}
-footer button:hover{
-  box-shadow: inset @box-shadow-button-outside-l;
-}
-
-/* ADM PANEL */
-#admPanel{
-  font-size: 16px;
-  background-color: rgb(252, 252, 228);
-  .display-flex-center;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: none; /*Questo deve essere cambiato a flex*/
-}
-#admPanel main{
-  width: calc(2*100vw/3);
-  height: 100vh;
-  padding: 30px;
-}
-#admPanel img{
-  width: 100px;
-  border: 5px solid;
-}
-#admPanel aside{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: calc(100vw/3);
-  height: 100vh;
-  background-color: #ddd;
-  padding: 30px;
-  position: relative;
-}
-#admPanel aside h2{
-  margin-bottom: 20px;
-}
-#admPanel aside h4{
-  color: rgb(136, 28, 28);
-  margin-bottom: 5px;
-}
-#admPanel aside input,
-#admPanel aside textarea{
-  background-color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
-#admPanel aside input,
-#admPanel aside input::placeholder,
-#admPanel aside label,
-#admPanel aside textarea{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-}
-#admPanel .newProductValorSect{
-  display: flex;
-}
-#admPanel .newProductValorSect div:nth-of-type(1){
-  margin-right: 5px;
-}
-#admPanel .newProductValorSect div:nth-of-type(2){
-margin: 0 5px;
-}
-#admPanel .newProductValorSect div:nth-of-type(3){
-margin-left: 5px;
-}
-#admPanel aside button{
-  width: 100px;
-  padding: 5px 0;
-  border: 1px solid #333;
-  box-shadow: @box-shadow-button-outside-s;
-  border-radius: 5px;
-  .display-flex-center;
-  color: #666;
-  font-size: 0.8rem;
-}
-#admPanel aside button:hover{
-  box-shadow: inset @box-shadow-button-outside-l;
+  button{
+    .display-flex-center;
+    width: 200px;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-radius: 15px;
+    background-color: @button-color;
+    box-shadow: @box-shadow-button-outside-l;
+    &:hover{
+      box-shadow: inset @box-shadow-button-outside-l;
+    }
+  }
 }
 
-#admPanel aside button span{
-  font-size: inherit;
-}
-#admPanel .closePanel{
-  position: absolute;
-  bottom: 30px;
-}
-/*MODALE ALERT PRODUCT & */
-#modalProduct, #modalAlertAdm{
-  position: absolute;
-  z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.747);
-  top: 0;
-  left: 0;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#modalProduct div, #modalAlertAdm div:first-child{
-  width: 700px;
-  height: 10%;
-  .display-flex-center;
-  flex-wrap: wrap;
-  background-color: #dddddd;
-  margin-bottom: 30px;
-  border-radius: 5px;
-  box-shadow: @box-shadow-button-outside-l;  
-}
-#modalProductText{
-  font-weight: 400;
-}
-#modalProduct button, #modalAlertAdm div:last-child button{
-  width: 150px;
-  border-radius: 5px;
-  background-color: rgb(231, 235, 38);
-  box-shadow: @box-shadow-button-outside-l;
-  padding: 5px 0;
-  .display-flex-center;
-}
-#modalProduct button:hover{
-  box-shadow: inset @box-shadow-button-outside-l;
-}
-#modalAlertAdm div:last-child{
-  display: flex;
-  width: 700px;
-  justify-content: space-around;
-}
-#modalAlertAdm div h3:last-of-type{
-  width: 100%;
-  text-align: center;
-  padding-bottom: 10px;
-  color: @text-red;
-  font-weight: 300;
-}
+@import "cart.less";
+@import "adm-panel.less";
+
+@import "modal.less";
